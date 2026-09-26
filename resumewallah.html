@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ResumeWallah | Human-written, ATS-friendly resumes</title>
+<meta name="description" content="ResumeWallah writes ATS-friendly resumes by hand for freshers and experienced professionals across India. Pro ₹299, Ultra ₹499, Complete Profile with LinkedIn and Naukri optimisation ₹1,499.">
+<meta property="og:title" content="ResumeWallah | ATS-friendly resume writing">
+<meta property="og:description" content="Hand-written resumes that pass ATS filters and get you shortlisted. Pro ₹299, Ultra ₹499, LinkedIn + Naukri Complete Profile ₹1,499.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0824">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --violet:#5B1EF0;
+  --blue:#1A8CFF;
+  --sky:#6CCBFF;
+  --grad:linear-gradient(120deg,#4B0FD6 0%,#3A3FEF 45%,#1A8CFF 100%);
+  --night:#0A0824;
+  --night2:#130F3D;
+  --ink:#15142F;
+  --muted:#5E6180;
+  --bg:#F6F7FC;
+  --surface:#FFFFFF;
+  --line:#E3E6F3;
+  --good:#10A35A;
+  --r-lg:28px;--r-md:18px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ink:#EDEEFF;--muted:#A3A8C8;--bg:#0E0C2A;--surface:#171445;--line:#2B2863;--good:#3BD17C}
+}
+:root[data-theme="dark"]{--ink:#EDEEFF;--muted:#A3A8C8;--bg:#0E0C2A;--surface:#171445;--line:#2B2863;--good:#3BD17C}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:Lexend,Figtree,system-ui,sans-serif;line-height:1.1;margin:0;font-weight:700}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:700;text-decoration:none;border-radius:999px;padding:.95rem 1.6rem;border:0;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-grad{background:var(--grad);color:#fff;box-shadow:0 10px 30px -10px rgba(58,63,239,.8),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(58,63,239,.9),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-light{background:#fff;color:#2B1BB8}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-glass{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px)}
+.btn-glass:hover{background:rgba(255,255,255,.14)}
+.btn-sm{padding:.6rem 1.1rem;font-size:.92rem}
+.wa-ic{width:18px;height:18px;flex:none}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 14px);z-index:40;padding:0 1rem;pointer-events:none}
+.nav-in{pointer-events:auto;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .6rem .55rem 1.3rem;border-radius:999px;background:rgba(14,11,48,.55);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);transition:background .3s}
+.nav.solid .nav-in{background:rgba(14,11,48,.88)}
+.logo{font-family:Lexend,sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.03em;text-decoration:none;color:#fff;display:flex;align-items:center;gap:.55rem}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:.8rem;box-shadow:0 0 18px rgba(58,63,239,.8)}
+.nav ul{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:rgba(255,255,255,.75);font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:#fff}
+@media (max-width:820px){.nav ul{display:none}}
+.nav .btn{white-space:nowrap}
+@media (max-width:640px){.nav .btn{display:none}.nav-in{padding:.7rem 1.2rem}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--night);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+   radial-gradient(60% 55% at 78% 30%,rgba(26,140,255,.45),transparent 70%),
+   radial-gradient(55% 60% at 20% 80%,rgba(91,30,240,.55),transparent 70%),
+   radial-gradient(40% 40% at 50% 0%,rgba(108,203,255,.18),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding-top:calc(9rem + env(safe-area-inset-top,0px));padding-bottom:5rem}
+.pill{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem .9rem .4rem .45rem;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:.9rem;color:rgba(255,255,255,.85)}
+.pill b{background:var(--grad);padding:.15rem .6rem;border-radius:999px;font-size:.78rem;color:#fff}
+.hero h1{font-size:clamp(2.4rem,4.8vw,3.9rem);font-weight:800;letter-spacing:-.035em;margin:1.4rem 0 0;
+  background:linear-gradient(180deg,#fff 30%,#B9C3FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:1.2rem;line-height:1.55;max-width:36ch;color:rgba(230,233,255,.8);margin:1.4rem 0 2.2rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.proof-row{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.1)}
+.proof-row div{font-size:.9rem;color:rgba(230,233,255,.65);max-width:14ch;line-height:1.35}
+.proof-row strong{display:block;font-family:Lexend,sans-serif;font-size:1.5rem;color:#fff;font-weight:700;margin-bottom:.2rem}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr;padding-top:calc(7.5rem + env(safe-area-inset-top,0px))}}
+
+/* Hero stage: fanned resumes */
+.stage{position:relative;height:520px;perspective:1400px}
+.stage .glow{position:absolute;left:50%;top:50%;width:380px;height:380px;transform:translate(-50%,-50%);background:var(--grad);filter:blur(90px);opacity:.55;border-radius:50%}
+.sheet{position:absolute;left:50%;top:50%;width:300px;height:424px;margin:-212px 0 0 -150px;border-radius:14px;overflow:hidden;background:#fff;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08);
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.sheet .mini{width:420px;transform:scale(.7143);transform-origin:top left;pointer-events:none}
+.sheet.s1{transform:translate(0,0) rotate(0);z-index:3}
+.sheet.s2{transform:translate(0,0) rotate(0);z-index:2;opacity:.0}
+.sheet.s3{transform:translate(0,0) rotate(0);z-index:1;opacity:0}
+.stage.go .sheet.s2{transform:translate(-120px,26px) rotate(-9deg) scale(.9);opacity:.9}
+.stage.go .sheet.s3{transform:translate(120px,30px) rotate(9deg) scale(.9);opacity:.9}
+.stage.go .sheet.s1{transform:translate(0,-10px)}
+.badge{position:absolute;z-index:5;background:rgba(255,255,255,.96);color:#15142F;border-radius:16px;padding:.75rem .95rem;display:flex;align-items:center;gap:.75rem;box-shadow:0 20px 40px -14px rgba(0,0,0,.6);opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}
+.stage.go .badge{opacity:1;transform:none}
+.badge small{display:block;color:#5E6180;font-size:.74rem;line-height:1.2}
+.badge strong{font-size:.95rem;line-height:1.25}
+.badge.b1{right:0;bottom:60px;transition-delay:.9s}
+.badge.b2{left:-6px;top:56px;transition-delay:1.2s}
+.ring{--p:0;width:52px;height:52px;border-radius:50%;background:conic-gradient(#10A35A calc(var(--p)*1%),#E7E9F6 0);display:grid;place-items:center;flex:none}
+.ring span{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:Lexend,sans-serif;font-weight:800;font-size:.95rem;color:#10A35A}
+.dot{width:38px;height:38px;border-radius:12px;background:#25D366;display:grid;place-items:center;flex:none}
+@media (max-width:920px){.stage{height:470px}}
+@media (min-width:921px) and (max-width:1200px){.stage{transform:scale(.82);transform-origin:center}}
+@media (max-width:560px){.stage{height:430px;transform:scale(.78);transform-origin:top center;margin:0 -1.25rem -80px}}
+@media (max-width:380px){.stage{transform:scale(.66);margin-bottom:-130px}}
+@media (max-height:500px) and (orientation:landscape){.hero-grid{padding-top:6rem}}
+
+/* Brand strip */
+.strip{background:var(--night);border-top:1px solid rgba(255,255,255,.08);color:rgba(230,233,255,.6);padding:1.4rem 0;overflow:hidden}
+.strip .row{display:flex;gap:3rem;width:max-content;animation:slide 50s linear infinite;font-family:Lexend,sans-serif;font-weight:600;font-size:1rem}
+.strip .row span{display:flex;align-items:center;gap:3rem;white-space:nowrap}
+.strip .row span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--grad)}
+
+/* ---------- Gallery (dark) ---------- */
+.gallery{background:linear-gradient(180deg,var(--night) 0%,var(--night2) 100%);color:#fff;padding:5.5rem 0 5rem;overflow:hidden;position:relative}
+.gallery .head{text-align:center;max-width:640px;margin:0 auto 3rem;padding:0 1.25rem}
+.gallery h2{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.025em}
+.gallery .head p{color:rgba(230,233,255,.7);margin:.9rem 0 0}
+.lanes{mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:1.25rem;width:max-content;animation:slide 60s linear infinite;padding:.5rem 0}
+.track.rev{animation-direction:reverse;margin-top:1.25rem}
+.lanes:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.sample{width:200px;height:283px;flex:none;border-radius:12px;overflow:hidden;position:relative;cursor:zoom-in;background:#fff;box-shadow:0 20px 40px -18px rgba(0,0,0,.8);transition:transform .3s}
+.sample:hover{transform:translateY(-6px) scale(1.02)}
+.sample .mini{width:420px;transform:scale(.4762);transform-origin:top left;pointer-events:none}
+.sample .lbl{position:absolute;left:10px;bottom:10px;background:rgba(10,8,36,.85);backdrop-filter:blur(6px);color:#fff;font-size:.74rem;font-weight:600;padding:.2rem .6rem;border-radius:999px}
+.fine{text-align:center;color:rgba(230,233,255,.5);font-size:.85rem;margin-top:2rem;padding:0 1rem}
+
+/* ---------- Resume doc styles (ATS / LaTeX style) ---------- */
+.cv{background:#fff;color:#111;font-family:"Times New Roman",Times,"Liberation Serif",serif;font-size:10.6px;line-height:1.35;padding:26px 30px;min-height:594px}
+.cv .cn{text-align:center;font-family:inherit;font-size:23px;font-weight:700;letter-spacing:.01em;line-height:1.1}
+.cv .ct{text-align:center;font-size:9.6px;margin:4px 0 6px}
+.cv .sep{margin:0 3px;color:#444}
+.cv .cs{font-family:inherit;font-variant:small-caps;font-size:12.5px;font-weight:700;letter-spacing:.02em;border-bottom:1px solid #111;margin:9px 0 4px;padding-bottom:1px;color:#111}
+.cv .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-top:4px}
+.cv .row.sub{margin-top:0;font-size:10px}
+.cv .row b{font-weight:700}
+.cv .row i{font-style:italic}
+.cv ul{margin:2px 0 3px;padding-left:16px}
+.cv li{margin:1px 0;padding-left:1px}
+.cv p{margin:0}
+.cv .sk{margin:2px 0}
+.cv .sk b{font-weight:700}
+
+/* ---------- Sections ---------- */
+section{padding:6.5rem 0}
+.sh{max-width:680px;margin-bottom:3.2rem}
+.sh.c{text-align:center;margin-left:auto;margin-right:auto}
+.sh h2{font-size:clamp(2rem,4.2vw,3.1rem);letter-spacing:-.03em;font-weight:800}
+.sh p{color:var(--muted);font-size:1.12rem;margin:1rem 0 0}
+
+/* Compare */
+.compare{display:grid;grid-template-columns:1fr 1.15fr;gap:1.5rem;align-items:stretch}
+.side{border-radius:var(--r-lg);padding:2.4rem}
+.side h3{font-size:1.5rem;margin-bottom:1.4rem;letter-spacing:-.01em}
+.side ul{list-style:none;margin:0;padding:0}
+.side li{display:flex;gap:.8rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.side li:first-child{border-top:0}
+.side .ic{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:.8rem;font-weight:800;margin-top:.1rem}
+.side.bad{background:var(--surface);border:1px solid var(--line)}
+.side.bad li{color:var(--muted)}
+.side.bad .ic{background:rgba(220,60,60,.12);color:#D64545}
+.side.good{background:var(--night);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.side.good::before{content:"";position:absolute;right:-30%;top:-40%;width:90%;height:120%;background:var(--grad);filter:blur(80px);opacity:.55;z-index:-1}
+.side.good li{border-color:rgba(255,255,255,.12)}
+.side.good .ic{background:var(--grad);color:#fff}
+@media (max-width:760px){.compare{grid-template-columns:1fr}}
+
+/* Before/After */
+.ba{display:grid;gap:1.1rem}
+.ba-row{display:grid;grid-template-columns:1fr 1.35fr;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.ba-b{padding:1.4rem 1.6rem;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(214,69,69,.6);text-decoration-thickness:2px;border-right:1px dashed var(--line);display:flex;align-items:center}
+.ba-a{padding:1.4rem 1.6rem;font-weight:600;font-size:1.08rem;position:relative}
+.ba-a::before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:3px;border-radius:3px;background:var(--grad)}
+.ba-a mark{background:linear-gradient(transparent 60%,rgba(26,140,255,.22) 60%);color:inherit;padding:0 .1em}
+@media (max-width:720px){.ba-row{grid-template-columns:1fr}.ba-b{border-right:0;border-bottom:1px dashed var(--line)}}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(170px,auto);gap:1rem}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:1.6rem;display:flex;flex-direction:column;justify-content:flex-end}
+.tile h3{font-size:1.15rem;margin-bottom:.4rem}
+.tile p{margin:0;color:var(--muted);font-size:.98rem}
+.tile .big{font-family:Lexend,sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:auto;letter-spacing:-.03em}
+.tile.hero-t{grid-column:span 2;grid-row:span 2;background:var(--night);color:#fff;border:0;position:relative;overflow:hidden;isolation:isolate}
+.tile.hero-t::before{content:"";position:absolute;left:-20%;bottom:-50%;width:100%;height:100%;background:var(--grad);filter:blur(70px);opacity:.7;z-index:-1}
+.tile.hero-t h3{font-size:1.7rem;letter-spacing:-.02em}
+.tile.hero-t p{color:rgba(230,233,255,.75);font-size:1.05rem;max-width:36ch}
+.tile.wide{grid-column:span 2}
+.tile .big.g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:900px){.bento{grid-template-columns:1fr 1fr}.tile.hero-t{grid-column:span 2;grid-row:span 1;min-height:260px}}
+@media (max-width:540px){.bento{grid-template-columns:1fr}.tile.hero-t,.tile.wide{grid-column:span 1}}
+
+/* Steps (dark) */
+.dark{background:var(--night);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.dark::before{content:"";position:absolute;left:50%;top:-40%;width:70%;height:80%;transform:translateX(-50%);background:var(--grad);filter:blur(120px);opacity:.35;z-index:-1}
+.dark .sh p{color:rgba(230,233,255,.7)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;counter-reset:s;position:relative}
+.step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:2rem 1.7rem;position:relative}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--grad);font-family:Lexend,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1.4rem;box-shadow:0 10px 24px -8px rgba(58,63,239,.9)}
+.step h3{font-size:1.25rem;margin-bottom:.5rem}
+.step p{margin:0;color:rgba(230,233,255,.7)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* Roles */
+.roles{display:flex;flex-wrap:wrap;gap:.7rem}
+.roles span{background:var(--surface);border:1px solid var(--line);padding:.6rem 1.1rem;border-radius:999px;font-weight:600;font-size:.98rem;transition:border-color .2s,color .2s}
+.roles span:hover{border-color:var(--blue);color:var(--blue)}
+
+/* Pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1120px;margin:0 auto;align-items:stretch}
+@media (max-width:1000px){.plans{grid-template-columns:1fr 1fr}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:2rem 1.7rem;display:flex;flex-direction:column;position:relative}
+.plan h3{font-size:1.45rem;letter-spacing:-.01em}
+.plan .for{color:var(--muted);margin:.5rem 0 1.6rem}
+.price{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.4rem}
+.price .now{font-family:Lexend,sans-serif;font-weight:800;font-size:2.9rem;letter-spacing:-.04em;line-height:1}
+.price s{color:var(--muted);font-size:1.1rem}
+.save{display:inline-block;font-size:.85rem;font-weight:700;color:var(--good);margin-bottom:1.6rem}
+.plan ul{list-style:none;padding:0;margin:0 0 2rem;flex:1}
+.plan li{padding:.65rem 0 .65rem 2rem;position:relative;border-top:1px solid var(--line)}
+.plan li::before{content:"✓";position:absolute;left:0;top:.7rem;width:1.3rem;height:1.3rem;border-radius:50%;display:grid;place-items:center;font-size:.72rem;font-weight:800;background:rgba(16,163,90,.14);color:var(--good)}
+.plan.pop{background:var(--night);color:#fff;border:0;overflow:hidden;isolation:isolate;box-shadow:0 40px 80px -30px rgba(58,63,239,.6)}
+.plan.pop::before{content:"";position:absolute;right:-30%;top:-30%;width:90%;height:70%;background:var(--grad);filter:blur(80px);opacity:.6;z-index:-1}
+.plan.pop::after{content:"";position:absolute;inset:0;border-radius:var(--r-lg);padding:1.5px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.plan.pop .for,.plan.pop s{color:rgba(230,233,255,.65)}
+.plan.pop li{border-color:rgba(255,255,255,.12)}
+.plan.pop li::before{background:var(--grad);color:#fff}
+.plan.pop .save{color:#5BE39A}
+.tag{position:absolute;top:1.6rem;right:1.6rem;background:var(--grad);color:#fff;font-size:.8rem;font-weight:700;padding:.3rem .8rem;border-radius:999px}
+.guar{max-width:960px;margin:1.5rem auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 2rem;color:var(--muted);font-size:.95rem}
+.guar span::before{content:"✓ ";color:var(--good);font-weight:800}
+@media (max-width:700px){.plans{grid-template-columns:1fr}}
+
+/* Reviews (hidden until real) */
+.proofs{display:grid;grid-template-columns:2fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
+.shots{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem}
+.shot{flex:none;width:200px;aspect-ratio:9/16;border-radius:16px;background:#E5DDD5;border:1px solid var(--line);scroll-snap-align:start;display:grid;place-items:center;color:#667;font-size:.85rem;text-align:center;padding:1rem;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover}
+.voice{background:var(--night);color:#fff;border-radius:var(--r-md);padding:1.5rem;display:flex;flex-direction:column;justify-content:center;gap:.75rem}
+.voice button{width:52px;height:52px;border-radius:50%;border:0;background:var(--grad);color:#fff;font-size:1.1rem;cursor:pointer}
+.voice .prog{height:6px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden}
+.voice .prog i{display:block;height:100%;width:0;background:var(--grad)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:1.6rem}
+.review p{margin:0 0 1.25rem}
+.who{display:flex;align-items:center;gap:.75rem}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-family:Lexend,sans-serif;font-weight:800}
+.who strong{display:block;line-height:1.2}
+.who small{color:var(--muted)}
+@media (max-width:860px){.reviews,.proofs{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
+.faq-grid .sh{position:sticky;top:110px}
+.faq-help{margin-top:1.8rem;padding:1.4rem;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line)}
+.faq-help p{margin:0 0 1rem;color:var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:0 1.4rem;margin-bottom:.75rem;transition:border-color .2s}
+details[open]{border-color:rgba(58,63,239,.45)}
+summary{cursor:pointer;font-weight:700;font-size:1.06rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.2rem 0}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--violet);font-family:Lexend,sans-serif;font-size:1.2rem;transition:transform .25s,background .25s,color .25s}
+details[open] summary::after{transform:rotate(45deg);background:var(--grad);color:#fff}
+details p{color:var(--muted);margin:0 0 1.3rem}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr;gap:1rem}.faq-grid .sh{position:static}}
+
+/* CTA band */
+.band{position:relative;overflow:hidden;isolation:isolate;border-radius:36px;padding:5rem 2rem;text-align:center;background:var(--night);color:#fff}
+.band::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg at 50% 50%,#4B0FD6,#1A8CFF,#6CCBFF,#4B0FD6);filter:blur(90px);opacity:.55;z-index:-1;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.band h2{font-size:clamp(2rem,4.5vw,3.3rem);letter-spacing:-.03em;font-weight:800;max-width:18ch;margin:0 auto}
+.band p{color:rgba(240,242,255,.85);margin:1.2rem auto 2.2rem;max-width:46ch;font-size:1.12rem}
+
+/* Footer */
+footer{background:var(--night);color:rgba(230,233,255,.65);padding:4.5rem 0 2.5rem;margin-top:6rem;font-size:.95rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
+@media (max-width:900px){footer .cols{grid-template-columns:1fr 1fr}}
+footer h4{color:#fff;font-size:1rem;margin-bottom:.9rem}
+footer a{display:block;text-decoration:none;margin:.45rem 0}
+footer a:hover{color:#fff}
+footer .about{max-width:36ch;margin:1rem 0 0}
+footer .copy{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+footer .wordmark{font-family:Lexend,sans-serif;font-weight:800;font-size:6rem;display:block;width:100%;text-align:center;letter-spacing:-.04em;line-height:.85;margin-top:3rem;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;white-space:nowrap;overflow:hidden}
+@media (max-width:720px){footer .cols{grid-template-columns:1fr}}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(6,4,24,.8);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;z-index:60;overflow:auto;padding:calc(2.5rem + env(safe-area-inset-top,0px)) 1rem 2rem}
+.modal.open{display:flex}
+.modal .box{position:relative;max-width:640px;width:100%}
+.modal .box .cv{border-radius:14px;font-size:13.2px;padding:38px 42px;box-shadow:0 40px 80px -20px rgba(0,0,0,.7)}
+.modal .box .cv .cn{font-size:29px}
+.modal .box .cv .cs{font-size:15px}
+.modal .box .cv .ct{font-size:12px}
+.modal .box .cv .row.sub{font-size:12.4px}
+@media (max-width:560px){.modal .box .cv{padding:22px 18px;font-size:11.5px}.modal .box .cv .cn{font-size:22px}.modal .box .cv .ct{font-size:10px}}
+.modal .x{position:absolute;top:-16px;right:-10px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#15142F;font-size:1.4rem;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.4);z-index:2}
+.modal .mcta-in{margin-top:1rem;display:flex;justify-content:center}
+
+/* Floating / mobile CTA */
+.wa-float{position:fixed;right:1.2rem;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.7)}
+.mcta{display:none}
+@media (max-width:640px){
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;gap:.5rem;padding:.65rem .75rem calc(.65rem + env(safe-area-inset-bottom,0px));background:rgba(10,8,36,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.1)}
+  .mcta .btn{flex:1;padding:.8rem}
+  .wa-float{display:none}
+  body{padding-bottom:74px}
+}
+@media (max-width:560px){
+  section{padding:4.5rem 0}
+  .plan{padding:1.8rem 1.4rem}
+  .price .now{font-size:2.7rem}
+  .plan .tag{position:static;align-self:flex-start;margin-bottom:1rem}
+  .side{padding:1.8rem 1.4rem}
+  .band{padding:3.5rem 1.4rem;border-radius:26px}
+  .tile{padding:1.4rem}
+  .ba-b,.ba-a{padding:1.1rem 1.2rem}
+  .proof-row{gap:1.4rem}
+  .hero .lead{font-size:1.08rem}
+  .gallery{padding:4rem 0}
+  .sample{width:170px;height:240px}
+  .sample .mini{transform:scale(.4048)}
+  details{padding:0 1.1rem}
+  footer{margin-top:4.5rem}
+}
+@media (min-width:1600px){.wrap{max-width:1280px}.nav-in{max-width:1200px}}
+.plan .btn{width:100%;white-space:nowrap;padding-left:1rem;padding-right:1rem}
+
+/* Legal pages (in-page) */
+.legal{position:fixed;inset:0;z-index:70;background:var(--bg);color:var(--ink);display:none;overflow:auto;-webkit-overflow-scrolling:touch}
+.legal.open{display:block}
+.legal-top{position:sticky;top:0;z-index:2;background:var(--night);color:#fff;padding:calc(.9rem + env(safe-area-inset-top,0px)) 1.25rem .9rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.legal-top .logo{font-size:1rem}
+.legal-top button{white-space:nowrap;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.5rem 1rem;font-weight:700;cursor:pointer;font-family:inherit}
+.legal-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2rem}
+.legal-nav a{text-decoration:none;font-size:.9rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.legal-nav a.on{background:var(--grad);color:#fff;border-color:transparent}
+.doc{display:none;max-width:780px;padding-bottom:5rem}
+.doc.on{display:block}
+.doc h1{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;margin:0 0 .3rem}
+.doc .upd{color:var(--muted);font-size:.9rem;margin:0 0 1.6rem}
+.doc h2{font-size:1.15rem;margin:1.8rem 0 .5rem}
+.doc h3{font-size:1rem;margin:1.2rem 0 .3rem}
+.doc p,.doc li{color:var(--muted)}
+.doc p{margin:.5rem 0}
+.doc ul{padding-left:1.2rem;margin:.4rem 0}
+.doc a{color:var(--blue)}
+.doc .note{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;margin-top:2rem;font-size:.92rem}
+.doc table{width:100%;border-collapse:collapse;font-size:.95rem;margin:.6rem 0}
+.doc td,.doc th{border:1px solid var(--line);padding:.55rem .7rem;text-align:left}
+.doc th{background:var(--surface)}
+.doc .tbl{overflow-x:auto}
+
+/* Payment */
+.pay{position:fixed;inset:0;background:rgba(6,4,24,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:65;padding:1rem;overflow:auto}
+.pay.open{display:flex}
+.pay .card{background:var(--surface);color:var(--ink);border-radius:24px;width:100%;max-width:440px;padding:1.8rem;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,.7);margin:auto}
+.pay .x{position:absolute;top:.9rem;right:.9rem;width:36px;height:36px;border-radius:50%;border:0;background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.pay h3{font-size:1.35rem;margin-bottom:.3rem;letter-spacing:-.01em}
+.pay .sub{color:var(--muted);margin:0 0 1.3rem;font-size:.97rem}
+.pay .plan-line{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:14px;padding:.8rem 1rem;margin-bottom:1.2rem}
+.pay .plan-line strong{font-family:Lexend,sans-serif}
+.pay .stack{display:grid;gap:.7rem}
+.pay .stack .btn{width:100%}
+.pay .off{font-size:.78rem;background:rgba(16,163,90,.14);color:var(--good);padding:.15rem .5rem;border-radius:999px;margin-left:.4rem}
+.pay .amt{text-align:center;margin:.4rem 0 1rem}
+.pay .amt .now{font-family:Lexend,sans-serif;font-weight:800;font-size:2.4rem;letter-spacing:-.03em}
+.pay .amt s{color:var(--muted);margin-right:.5rem}
+.pay .amt small{display:block;color:var(--good);font-weight:700;font-size:.85rem}
+.qrbox{width:224px;height:224px;margin:0 auto;background:#fff;border-radius:16px;padding:12px;display:grid;place-items:center;border:1px solid var(--line)}
+.qrbox img,.qrbox canvas{width:200px!important;height:200px!important;border-radius:6px}
+.pay .timer{text-align:center;color:var(--muted);font-size:.92rem;margin:.9rem 0 .3rem}
+.pay .timer b{color:var(--ink);font-family:Lexend,sans-serif}
+.pay .upi{display:flex;align-items:center;justify-content:space-between;gap:.6rem;background:var(--bg);border-radius:12px;padding:.7rem .9rem;font-size:.9rem;margin:.8rem 0}
+.pay .upi code{font-family:inherit;font-weight:700;word-break:break-all}
+.pay .upi button,.pay .ghost{background:transparent;border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-weight:700;cursor:pointer;color:var(--ink);font-family:inherit;font-size:.85rem;white-space:nowrap}
+.pay .row2{display:flex;gap:.6rem;justify-content:center;margin-bottom:.9rem}
+.pay .row2 .btn,.pay .row2 .ghost{white-space:nowrap}
+@media (max-width:380px){.pay .card{padding:1.4rem 1.1rem}.pay .row2{flex-direction:column}.pay .row2 .ghost{padding:.7rem}}
+.pay .hint{font-size:.82rem;color:var(--muted);text-align:center;margin:0 0 1rem}
+.pay .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
+.pay .expired{text-align:center;color:#D64545;font-weight:700;margin:.5rem 0}
+.plan .order-note{font-size:.82rem;color:var(--muted);text-align:center;margin:.6rem 0 0}
+.plan.pop .order-note{color:rgba(230,233,255,.65)}
+.plan .btn{cursor:pointer}
+footer .social a{display:inline-flex;align-items:center;gap:.5rem}
+footer .admin-link{display:inline-flex;align-items:center;gap:.4rem;margin:0;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:600;font-size:.85rem}
+footer .admin-link:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- Resume templates ---------- */
+.cv.t-modern{font-family:Figtree,Arial,Helvetica,sans-serif;font-size:10.4px;color:#1a1a2e}
+.cv.t-modern .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:2.5px solid var(--acc);padding-bottom:7px;margin-bottom:6px}
+.cv.t-modern .cn{text-align:left;font-family:Lexend,Figtree,Arial,sans-serif;font-size:22px;font-weight:800;color:var(--acc);letter-spacing:-.01em}
+.cv.t-modern .role{font-size:11px;font-weight:600;color:#333;margin-top:1px}
+.cv.t-modern .ct{text-align:right;font-size:9px;margin:0;line-height:1.5;color:#444}
+.cv.t-modern .ct .sep{display:none}.cv.t-modern .ct span.c{display:block}
+.cv.t-modern .cs{font-family:Lexend,Figtree,Arial,sans-serif;font-variant:normal;text-transform:uppercase;letter-spacing:.12em;font-size:9.5px;font-weight:700;color:var(--acc);border-bottom:1px solid #e2e4ee;margin:10px 0 5px;padding-bottom:3px}
+.cv.t-modern .row b{color:#111}.cv.t-modern .row.sub{color:#555}.cv.t-modern .row i{font-style:normal}
+.cv.t-modern ul{padding-left:14px}.cv.t-modern li::marker{color:var(--acc)}
+.cv.t-modern .sk b{color:var(--acc)}
+
+.cv.t-minimal{font-family:Arial,Helvetica,sans-serif;font-size:10.2px;color:#222;padding:30px 34px}
+.cv.t-minimal .cn{text-align:center;font-family:inherit;font-size:20px;font-weight:400;text-transform:uppercase;letter-spacing:.28em;color:#111}
+.cv.t-minimal .role{text-align:center;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#777;margin-top:4px}
+.cv.t-minimal .ct{font-size:9px;color:#666;margin:6px 0 10px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:5px 0}
+.cv.t-minimal .cs{font-family:inherit;font-variant:normal;text-transform:uppercase;letter-spacing:.2em;font-size:8.6px;font-weight:700;color:#888;border:0;margin:12px 0 5px}
+.cv.t-minimal .row b{font-weight:700}.cv.t-minimal .row.sub{color:#666}.cv.t-minimal ul{padding-left:12px}.cv.t-minimal li{color:#333}
+
+.cv.t-executive{font-family:Georgia,"Times New Roman",serif;font-size:10.5px;color:#1c1c1c;padding:0 0 24px}
+.cv.t-executive .band{background:var(--acc);color:#fff;padding:20px 30px 16px}
+.cv.t-executive .cn{text-align:left;font-family:inherit;font-size:24px;font-weight:700;letter-spacing:.02em;color:#fff}
+.cv.t-executive .role{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-top:3px}
+.cv.t-executive .ct{text-align:left;font-size:9.2px;margin:6px 0 0;opacity:.92}.cv.t-executive .ct .sep{color:rgba(255,255,255,.6)}
+.cv.t-executive .body{padding:8px 30px 0}
+.cv.t-executive .cs{font-family:inherit;font-variant:normal;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:700;color:var(--acc);border-bottom:2px solid var(--acc);margin:11px 0 5px;padding-bottom:2px}
+.cv.t-executive .row span:last-child,.cv.t-executive .row.sub i:last-child{font-weight:700;font-style:normal;color:#444;font-size:9.6px}
+.cv.t-executive .row.sub i:first-child{color:#444}
+
+.cv.t-compact{font-family:Arial,Helvetica,sans-serif;font-size:10.2px;color:#1b1b1b;padding:24px 28px}
+.cv.t-compact .cn{text-align:left;font-family:inherit;font-size:24px;font-weight:800;color:#111;letter-spacing:-.02em;line-height:1}
+.cv.t-compact .role{font-size:11px;font-weight:700;color:var(--acc);margin-top:3px}
+.cv.t-compact .ct{text-align:left;font-size:9px;color:#555;margin:4px 0 8px}
+.cv.t-compact .cs{font-family:inherit;font-variant:normal;font-size:10.5px;font-weight:800;color:#111;border:0;border-left:3px solid var(--acc);padding:0 0 0 7px;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.06em}
+.cv.t-compact .row.sub{color:#555}.cv.t-compact .row i{font-style:normal}
+.cv.t-compact .skp{display:inline-block;border:1px solid #cfd3e0;border-radius:4px;padding:1px 6px;margin:2px 3px 2px 0;font-size:9.2px}
+.cv.t-compact .sk b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-top:3px}
+
+/* ---------- Admin panel ---------- */
+.admin{position:fixed;inset:0;z-index:80;background:var(--bg);color:var(--ink);display:none;overflow:auto}
+.admin.open{display:block}
+.admin .top{position:sticky;top:0;z-index:2;background:var(--night);color:#fff;padding:calc(.8rem + env(safe-area-inset-top,0px)) 1.25rem .8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.admin .top .btn{padding:.55rem 1rem;font-size:.9rem}
+.admin .top .acts{display:flex;gap:.5rem;flex-wrap:wrap}
+.admin .wrap{padding-top:1.5rem;padding-bottom:5rem;max-width:980px}
+.admin .login{max-width:420px;margin:4rem auto;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:2rem}
+.admin .login h2{font-size:1.4rem;margin-bottom:.4rem}
+.admin .login p{color:var(--muted);margin:0 0 1.2rem;font-size:.95rem}
+.admin input,.admin textarea,.admin select{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.65rem .8rem;margin-top:.3rem}
+.admin textarea{min-height:90px;resize:vertical;line-height:1.5}
+.admin label{display:block;font-weight:600;font-size:.9rem;margin-top:.9rem}
+.admin label small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.admin .sec{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.5rem;margin-bottom:1.2rem}
+.admin .sec h3{font-size:1.1rem;margin-bottom:.2rem}
+.admin .sec .desc{color:var(--muted);font-size:.9rem;margin:0}
+.admin .g2{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+.admin .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 1rem}
+@media (max-width:640px){.admin .g2,.admin .g3{grid-template-columns:1fr}}
+.admin .note{background:rgba(58,63,239,.08);border:1px solid rgba(58,63,239,.3);border-radius:14px;padding:1rem 1.2rem;font-size:.92rem;margin-bottom:1.2rem}
+.admin .note b{display:block;margin-bottom:.3rem}
+.admin .chk{display:flex;align-items:center;gap:.6rem;margin-top:.9rem;font-weight:600}
+.admin .chk input{width:auto;margin:0}
+.admin .toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--night);color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:90}
+.admin .toast.on{opacity:1}
+.admin .err{color:#D64545;font-size:.85rem;margin-top:.5rem}
+.admin .plan-edit{border-top:1px dashed var(--line);margin-top:1rem;padding-top:.5rem}
+.admin .out{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem}
+</style>
+</head>
+<body>
+<!-- ================= SITE CONFIG: Admin panel (site-url/#admin) isi ko edit karta hai ================= -->
+<script id="siteConfig" type="application/json">
+{
+ "adminPassword": "resumewallah@123",
+ "whatsapp": "919565698084",
+ "supportEmail": "support@resumewallah.com",
+ "legalEmail": "legal@resumewallah.com",
+ "instagram": "https://www.instagram.com/resumewallah_",
+ "upiId": "gpay-12193280497@okbizaxis",
+ "upiName": "Resumewallah",
+ "onlineDiscount": 5,
+ "hero": {
+  "pill": "Pro ₹299 · Ultra ₹499 · Complete Profile ₹1,499",
+  "title": "Your experience deserves a resume that gets read.",
+  "lead": "ResumeWallah writes your resume by hand, tuned to pass ATS filters and built to get you shortlisted.",
+  "stats": [
+   [
+    "1 : 1",
+    "Your own resume writer"
+   ],
+   [
+    "24 hrs",
+    "First draft delivery"
+   ],
+   [
+    "0–20+ yrs",
+    "Freshers to senior leaders"
+   ]
+  ]
+ },
+ "pricing": {
+  "title": "Invest in your career",
+  "sub": "One-time payment. No subscriptions. Pay online or order on WhatsApp."
+ },
+ "plans": [
+  {
+   "id": "pro",
+   "name": "Pro Plan",
+   "for": "A clean, ATS-ready resume written by a professional writer.",
+   "price": 299,
+   "old": 1499,
+   "save": "80% off · You save ₹1,200",
+   "features": [
+    "ATS-friendly resume",
+    "Professional layout",
+    "Written by a professional writer",
+    "1 free revision",
+    "24-hour delivery"
+   ],
+   "cta": "Claim Pro Plan",
+   "popular": false
+  },
+  {
+   "id": "ultra",
+   "name": "Ultra Plan",
+   "for": "Everything in Pro, delivered faster, with community access.",
+   "price": 499,
+   "old": 2499,
+   "save": "80% off · You save ₹2,000",
+   "features": [
+    "Everything in the Pro Plan",
+    "Ultra resume with role-specific keywords",
+    "Free community access",
+    "12-hour superfast delivery",
+    "Priority support on WhatsApp"
+   ],
+   "cta": "Claim Ultra Plan",
+   "popular": true
+  },
+  {
+   "id": "profile",
+   "name": "Complete Profile",
+   "for": "Resume plus the LinkedIn and Naukri profiles recruiters search every day.",
+   "price": 1499,
+   "old": 1999,
+   "save": "25% off · You save ₹500",
+   "features": [
+    "Everything in the Ultra Plan",
+    "LinkedIn profile optimisation: headline, About, experience",
+    "Naukri profile optimisation with role keywords",
+    "Recruiter-search friendly keywords on both profiles",
+    "2 free revisions"
+   ],
+   "cta": "Claim Complete Profile",
+   "popular": false
+  }
+ ],
+ "reviews": {
+  "show": false,
+  "title": "What clients say",
+  "items": [],
+  "shots": [],
+  "voice": ""
+ },
+ "faq": [
+  [
+   "Is my resume written by a person or by AI?",
+   "A real resume writer works on your resume from start to finish, based on your details and the roles you're targeting."
+  ],
+  [
+   "What does ATS-friendly mean?",
+   "Many companies use software called an Applicant Tracking System to scan resumes first. We use layouts and wording this software reads correctly, so your resume reaches a recruiter."
+  ],
+  [
+   "How do you collect my details?",
+   "After you order, we message you on WhatsApp. You send your current CV and answer a few questions about your work and goals."
+  ],
+  [
+   "How long does delivery take?",
+   "Pro Plan: first draft within 24 hours of receiving your details. Ultra Plan: prioritised and delivered within 12 hours. Revisions are usually done within a few hours."
+  ],
+  [
+   "I'm a fresher with no experience. Can you still help?",
+   "Yes. We build your resume around projects, internships, academics, certifications and skills so it's strong even without full-time experience."
+  ],
+  [
+   "Do you offer revisions?",
+   "Yes. One revision is free with every plan. After that, each additional revision is ₹50, as per our Schedule of Charges."
+  ],
+  [
+   "How do I pay?",
+   "Choose a plan, then pay online by scanning the UPI QR code with any UPI app (GPay, PhonePe, Paytm). Online payment gets an extra 5% off. You can also order directly on WhatsApp."
+  ],
+  [
+   "What's included in LinkedIn and Naukri optimisation?",
+   "In the Complete Profile plan we rewrite your LinkedIn headline, About section and experience, and update your Naukri profile with the right keywords so recruiters find you in searches. You share your login details or apply the changes yourself from the document we send."
+  ],
+  [
+   "Do you guarantee a job or interview?",
+   "No resume service can promise that, and we don't. We write a resume that clears ATS filters and presents your experience at its best; the outcome depends on your profile, the role and the market. See our Disclaimer for details."
+  ],
+  [
+   "Is my personal information safe?",
+   "Your details are used only to write your resume and are never shared with anyone else."
+  ]
+ ],
+ "band": {
+  "title": "Ready for more interview calls?",
+  "text": "Send us your current resume on WhatsApp and we'll tell you what to fix, for free.",
+  "cta": "Get a free resume review"
+ }
+}
+</script>
+<!-- ====== EDIT: WhatsApp number 919565698084, emails support@/legal@resumewallah.com, UPI ID (search "UPI_ID" in script) ====== -->
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="nav-in">
+    <a href="#" class="logo"><i>R</i>RESUMEWALLAH</a>
+    <ul>
+      <li><a href="#samples">Samples</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-grad btn-sm" href="#pricing">Get my resume</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><b>Offer</b> <span data-cfg="hero.pill"></span></span>
+      <h1 data-cfg="hero.title"></h1>
+      <p class="lead" data-cfg="hero.lead"></p>
+      <div class="ctas">
+        <a class="btn btn-grad" href="#pricing">Get my resume</a>
+        <a class="btn btn-glass" data-wa="Hi%20ResumeWallah%2C%20I%20want%20a%20new%20resume" target="_blank" rel="noopener">
+          <svg class="wa-ic" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+          Chat on WhatsApp</a>
+      </div>
+      <div class="proof-row" id="heroStats"></div>
+    </div>
+
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="sheet s3"><div class="mini" data-cv="3"></div></div>
+      <div class="sheet s2"><div class="mini" data-cv="4"></div></div>
+      <div class="sheet s1"><div class="mini" data-cv="1"></div></div>
+      <div class="badge b1">
+        <div class="ring" id="ring"><span id="scoreNum">0</span></div>
+        <div><small>ATS match score</small><strong>Ready to apply</strong></div>
+      </div>
+      <div class="badge b2">
+        <div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></div>
+        <div><small>Your writer</small><strong>Draft is ready to review</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="strip" aria-hidden="true">
+    <div class="row">
+      <span>Software engineering</span><span>Data & analytics</span><span>Sales</span><span>Marketing</span><span>HR</span><span>Finance</span><span>Operations</span><span>Design</span><span>Healthcare</span><span>Freshers</span><span>Leadership</span><span>Gulf & abroad jobs</span><span>LinkedIn & Naukri profiles</span>
+      <span>Software engineering</span><span>Data & analytics</span><span>Sales</span><span>Marketing</span><span>HR</span><span>Finance</span><span>Operations</span><span>Design</span><span>Healthcare</span><span>Freshers</span><span>Leadership</span><span>Gulf & abroad jobs</span><span>LinkedIn & Naukri profiles</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- SAMPLE RESUMES: fictional dummy resumes, JS ke "SAMPLES" array se bante hain. Apne asli samples aane pe array edit karo. -->
+<div class="gallery" id="samples" aria-label="Sample resumes">
+  <div class="head">
+    <h2>Resumes that look as good as your work</h2>
+    <p>Browse sample resumes across roles and experience levels. Tap any one to read it in full.</p>
+  </div>
+  <div class="lanes">
+    <div class="track" id="track1"></div>
+    <div class="track rev" id="track2"></div>
+  </div>
+  <p class="fine">Names and details in these samples are fictional, for illustration.</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sh">
+      <h2>Same experience. Very different results.</h2>
+      <p>Most resumes are rejected by software before a person ever opens them. Here's what changes when yours is written properly.</p>
+    </div>
+    <div class="compare">
+      <div class="side bad">
+        <h3>A downloaded template</h3>
+        <ul>
+          <li><span class="ic">✕</span>Columns and graphics that ATS software can't read</li>
+          <li><span class="ic">✕</span>Duties listed, results missing</li>
+          <li><span class="ic">✕</span>No keywords from the jobs you apply to</li>
+          <li><span class="ic">✕</span>Months of applying with no calls</li>
+        </ul>
+      </div>
+      <div class="side good">
+        <h3>A ResumeWallah resume</h3>
+        <ul>
+          <li><span class="ic">✓</span>Clean structure that every ATS reads correctly</li>
+          <li><span class="ic">✓</span>Your achievements written with numbers and impact</li>
+          <li><span class="ic">✓</span>Keywords matched to your target roles</li>
+          <li><span class="ic">✓</span>A resume you're proud to send</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="difference" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <h2>The difference, one line at a time</h2>
+      <p>Recruiters skim. We rewrite the lines they actually read.</p>
+    </div>
+    <div class="ba">
+      <div class="ba-row"><div class="ba-b">Responsible for handling customer queries.</div><div class="ba-a">Resolved <mark>60+ customer queries a day</mark> across chat and email, keeping CSAT above 92% for three straight quarters.</div></div>
+      <div class="ba-row"><div class="ba-b">Worked on Python and SQL for reports.</div><div class="ba-a">Automated weekly sales reporting with Python and SQL, <mark>cutting prep time from 6 hours to 40 minutes</mark>.</div></div>
+      <div class="ba-row"><div class="ba-b">Good communication skills and team player.</div><div class="ba-a">Led a 5-member team to launch a regional campaign that brought in <mark>1,200 qualified leads in 8 weeks</mark>.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="what" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <h2>What you get</h2>
+      <p>Every order follows the same careful process, whichever plan you choose.</p>
+    </div>
+    <div class="bento">
+      <div class="tile hero-t">
+        <span class="big">1:1</span>
+        <h3>A real writer, just for you</h3>
+        <p>Your writer reads your old CV, asks the right questions on WhatsApp, and understands the roles you're aiming for before writing a single line.</p>
+      </div>
+      <div class="tile"><h3>ATS-safe format</h3><p>Single-column layout and standard headings every tracking system reads.</p></div>
+      <div class="tile"><h3>Impact-first bullets</h3><p>Duties rewritten as results, with numbers wherever your work allows.</p></div>
+      <div class="tile"><h3>Role keywords</h3><p>Taken from real job descriptions for your target role.</p></div>
+      <div class="tile"><h3>Word + PDF</h3><p>Editable Word file for later updates, plus a ready-to-send PDF.</p></div>
+      <div class="tile wide"><span class="big g">24 hrs</span><h3>Fast delivery, one free revision</h3><p>First draft within 24 hours (12 hours on Ultra). Review it and request one free revision; extra revisions are ₹50 each.</p></div>
+      <div class="tile wide"><span class="big g">Private</span><h3>Your data stays yours</h3><p>Your details are used only to write your resume and never shared.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="dark">
+  <div class="wrap">
+    <div class="sh c">
+      <h2>From old CV to interview-ready in three steps</h2>
+      <p>No forms, no long calls. Everything happens on WhatsApp.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Choose a plan</h3><p>Pick the package that fits where you are in your career.</p></div>
+      <div class="step"><h3>Talk to your writer</h3><p>Share your old CV and goals on WhatsApp. Your writer asks the right questions.</p></div>
+      <div class="step"><h3>Receive and apply</h3><p>Get your finished resume, request changes if needed, and start applying.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="wrap">
+    <div class="sh">
+      <h2>Written for every stage and field</h2>
+      <p>Freshers, career switchers and senior professionals with 20+ years.</p>
+    </div>
+    <div class="roles">
+      <span>Freshers & interns</span><span>Software engineering</span><span>Data & analytics</span><span>Sales & business development</span><span>Marketing</span><span>HR & recruitment</span><span>Finance & accounts</span><span>Operations & supply chain</span><span>Customer support</span><span>Design & UI/UX</span><span>Healthcare</span><span>Teaching</span><span>Managers & leadership</span><span>Career switch</span><span>Gulf & abroad jobs</span>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh c">
+      <h2 data-cfg="pricing.title"></h2>
+      <p data-cfg="pricing.sub"></p>
+    </div>
+    <div class="plans" id="plans"></div>
+    <div class="guar"><span>Written by a real person</span><span>1 free revision</span><span>UPI payment</span><span>Support on WhatsApp</span></div>
+  </div>
+</section>
+
+<!-- REVIEWS: admin panel se on/off aur edit hote hain -->
+<section id="reviews" style="padding-top:0" hidden>
+  <div class="wrap">
+    <div class="sh"><h2 data-cfg="reviews.title"></h2></div>
+    <div class="proofs" id="proofs">
+      <div class="shots" id="shots"></div>
+      <div class="voice" id="voiceBox">
+        <strong>Client voice note</strong>
+        <small id="vcap">Listen to what a client said</small>
+        <button id="vbtn" aria-label="Play voice note">▶</button>
+        <div class="prog"><i id="vprog"></i></div>
+        <audio id="vaudio" src="" preload="none"></audio>
+      </div>
+    </div>
+    <div class="reviews" id="reviewList"></div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="sh">
+      <h2>Questions, answered</h2>
+      <div class="faq-help">
+        <p>Didn't find your answer? Message us and a writer will reply.</p>
+        <a class="btn btn-grad btn-sm" data-wa="Hi%20ResumeWallah%2C%20I%20have%20a%20question" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <div id="faqList"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0">
+  <div class="wrap">
+    <div class="band">
+      <h2 data-cfg="band.title"></h2>
+      <p data-cfg="band.text"></p>
+      <a class="btn btn-light" data-wa="Hi ResumeWallah, please review my resume" data-cfg="band.cta" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="#" class="logo"><i>R</i>RESUMEWALLAH</a>
+        <p class="about">Hand-written, ATS-friendly resumes for job seekers across India.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a data-wa="" target="_blank" rel="noopener">WhatsApp: <span data-cfg="whatsappDisplay"></span></a>
+        <a data-mail="supportEmail"></a>
+        <a data-mail="legalEmail"></a>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="#samples">Samples</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a data-cfg-href="instagram" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#legal-terms">Terms of Service</a>
+        <a href="#legal-privacy">Privacy Policy</a>
+        <a href="#legal-refund">Refund &amp; Billing Policy</a>
+        <a href="#legal-disclaimer">Disclaimer</a>
+        <a href="#legal-charges">Schedule of Charges</a>
+      </div>
+    </div>
+    <div class="wordmark" aria-hidden="true">RESUMEWALLAH</div>
+    <div class="copy"><span>© <span id="yr"></span> ResumeWallah. All rights reserved.</span><span>Made in India</span></div>
+  </div>
+</footer>
+
+<!-- ================= LEGAL PAGES (open from footer links: #legal-terms etc.) ================= -->
+<div class="legal" id="legal" role="dialog" aria-modal="true" aria-label="Legal information">
+  <div class="legal-top">
+    <a href="#" class="logo" id="legalHome"><i>R</i>RESUMEWALLAH</a>
+    <button type="button" id="legalClose">← Back to site</button>
+  </div>
+  <div class="wrap">
+    <nav class="legal-nav" aria-label="Policies">
+      <a href="#legal-terms" data-doc="terms">Terms of Service</a>
+      <a href="#legal-privacy" data-doc="privacy">Privacy Policy</a>
+      <a href="#legal-refund" data-doc="refund">Refund &amp; Billing</a>
+      <a href="#legal-disclaimer" data-doc="disclaimer">Disclaimer</a>
+      <a href="#legal-charges" data-doc="charges">Schedule of Charges</a>
+    </nav>
+
+    <article class="doc" id="doc-terms">
+      <h1>Terms of Service</h1>
+      <p class="upd">Last updated: January 2026</p>
+      <p>Welcome to Resumewallah.in. These Terms of Service ("Terms", "ToS") constitute a legally binding agreement between Resumewallah ("Resumewallah", "we", "us", "our") and you ("User", "you"). By accessing or using Resumewallah.in, its services, tools, content, or support, you agree to be bound by these Terms. If you do not agree with these Terms, you must not use our website or services.</p>
+      <h2>1. Nature of Services</h2>
+      <p>Resumewallah is a professional resume writing and career-support platform. We provide services including, but not limited to, resume writing, resume editing, resume optimization, formatting, and general career-related guidance. Our services may be delivered manually, semi-automatically, or with the assistance of third-party tools.</p>
+      <p>Resumewallah is not a recruitment agency, employment agency, or job placement service. We do not guarantee employment, interview calls, job offers, salary increases, or career advancement of any kind.</p>
+      <h2>2. No Guarantee / No Warranty Disclaimer</h2>
+      <p>Resumewallah provides all services on an "as is" and "as available" basis, without any guarantees or warranties, whether express or implied. This includes, but is not limited to:</p>
+      <ul><li>No guarantee of job placement</li><li>No guarantee of interview calls</li><li>No guarantee of salary hike or promotion</li><li>No guarantee of career success or growth</li></ul>
+      <p>You acknowledge and agree that the effectiveness of a resume depends on multiple factors beyond Resumewallah's control, including but not limited to:</p>
+      <ul><li>Job market conditions</li><li>Employer and recruiter preferences</li><li>Company hiring policies</li><li>Your skills, experience, education, and background</li><li>Industry standards and role-specific requirements</li></ul>
+      <p>All outcomes depend entirely on the user and external factors. Resumewallah shall not be held responsible for any results or lack thereof.</p>
+      <h2>3. User Responsibilities</h2>
+      <p>By using Resumewallah's services, you agree that:</p>
+      <ul><li>All information, documents, and data you provide are accurate, truthful, and complete</li><li>You are solely responsible for verifying and approving the final resume or content before use</li><li>Resumewallah is not responsible for any consequences arising from inaccurate, misleading, or incomplete information provided by you</li><li>Any dispute, rejection, or issue raised by employers or third parties based on the resume content shall be the sole responsibility of the user</li></ul>
+      <h2>4. Service Modifications &amp; Changes</h2>
+      <p>Resumewallah reserves the unrestricted right to modify, update, suspend, or discontinue any part of its services at any time, with or without prior notice. This includes changes to:</p>
+      <ul><li>Service offerings</li><li>Features and functionality</li><li>Pricing and payment structures</li><li>Delivery timelines and workflows</li><li>Terms of Service and policies</li></ul>
+      <p>Continued use of the website or services after changes are published constitutes acceptance of the updated Terms.</p>
+      <h2>5. Refund Policy</h2>
+      <p>Resumewallah provides customized and personalized services. Therefore:</p>
+      <ul><li>All payments are generally non-refundable</li><li>Any refund, if granted, shall be at the sole discretion of Resumewallah</li><li>Dissatisfaction based on personal preference, expectations, or subjective opinion does not qualify for a refund</li></ul>
+      <p>Please read our full <a href="#legal-refund">Refund &amp; Billing Policy</a>.</p>
+      <h2>6. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Resumewallah shall not be liable for any:</p>
+      <ul><li>Direct or indirect damages</li><li>Incidental or consequential losses</li><li>Loss of income, employment, opportunity, or reputation</li></ul>
+      <p>If, despite the above, Resumewallah is found liable for any claim, the total liability shall be strictly limited to the amount paid by the user for the specific service.</p>
+      <h2>7. Intellectual Property Rights</h2>
+      <p>All content, designs, text, graphics, logos, branding elements, tools, and materials available on Resumewallah.in are the intellectual property of Resumewallah and are protected by applicable laws.</p>
+      <p>The resume delivered to the user is intended for personal use only. Commercial resale, redistribution, or reuse for business purposes is strictly prohibited.</p>
+      <h2>8. Support &amp; Official Communication</h2>
+      <p>All official communication with Resumewallah shall be conducted exclusively through the following channels:</p>
+      <ul><li><a href="mailto:support@resumewallah.com">support@resumewallah.com</a></li><li><a href="mailto:legal@resumewallah.com">legal@resumewallah.com</a></li><li>WhatsApp: <a data-wa="" target="_blank" rel="noopener"><span data-cfg="whatsappDisplay"></span></a></li></ul>
+      <p>Resumewallah shall not be responsible for communications made through unofficial channels, third-party platforms, or unauthorized representatives.</p>
+      <h2>9. Suspension &amp; Termination</h2>
+      <p>Resumewallah reserves the right to suspend or terminate user access, without notice, if:</p>
+      <ul><li>These Terms are violated</li><li>Fraudulent, abusive, or unlawful activity is detected</li><li>Continued access poses legal, operational, or compliance risks</li></ul>
+      <p>Certain provisions of these Terms, including disclaimers and limitation of liability, shall survive termination.</p>
+      <h2>10. Governing Law &amp; Jurisdiction</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of Indian courts.</p>
+      <h2>11. Acceptance of Terms</h2>
+      <p>By accessing or using Resumewallah.in, you confirm that:</p>
+      <ul><li>You have read and understood these Terms of Service</li><li>You agree to be legally bound by them</li><li>You are using the services voluntarily and at your own risk</li></ul>
+      <p>Resumewallah reserves the right to update or change these Terms of Service at any time without prior notice.</p>
+    </article>
+
+    <article class="doc" id="doc-privacy">
+      <h1>Privacy Policy</h1>
+      <p class="upd">Last updated: January 2026</p>
+      <p>Resumewallah ("Resumewallah", "we", "us", "our") respects your privacy and is committed to protecting the personal information of users ("you", "your"). This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you visit or use Resumewallah.in and its services. By using our website or services, you agree to this Privacy Policy.</p>
+      <h2>1. Information We Collect</h2>
+      <h3>a) Personal Information</h3>
+      <ul><li>Name</li><li>Email address</li><li>Phone number</li><li>Resume/CV details including education, experience, skills, and career history</li><li>Any information voluntarily shared via forms, emails, WhatsApp, or support communication</li></ul>
+      <h3>b) Technical &amp; Usage Information</h3>
+      <ul><li>IP address</li><li>Browser type and device information</li><li>Pages visited, time spent, and interaction data</li><li>Cookies and similar tracking technologies</li></ul>
+      <h2>2. How We Use Your Information</h2>
+      <p>Your information is used for purposes including:</p>
+      <ul><li>Providing resume writing and related career services</li><li>Communicating about orders, updates, and support</li><li>Improving our services and website performance</li><li>Internal analysis, quality checks, and compliance</li><li>Legal and security purposes</li></ul>
+      <p>We do not sell or rent your personal data to third parties.</p>
+      <h2>3. Data Sharing &amp; Disclosure</h2>
+      <p>We may share your information only:</p>
+      <ul><li>With internal staff or contractors strictly for service delivery</li><li>With trusted third-party service providers under confidentiality obligations</li><li>When required by law, court order, or government authority</li><li>To protect Resumewallah's rights, users, or platform security</li></ul>
+      <h2>4. Data Security</h2>
+      <p>We use reasonable technical and organizational measures to protect your data. However, no online system is completely secure, and Resumewallah does not guarantee absolute data security.</p>
+      <h2>5. Data Retention</h2>
+      <p>We retain personal data only as long as necessary to:</p>
+      <ul><li>Provide services</li><li>Meet legal or regulatory requirements</li><li>Resolve disputes and enforce agreements</li></ul>
+      <p>Anonymized data may be retained for business analytics.</p>
+      <h2>6. Cookies &amp; Tracking</h2>
+      <p>Resumewallah uses cookies to enhance functionality and user experience. You may disable cookies in your browser settings, though some features may not function properly.</p>
+      <h2>7. User Rights</h2>
+      <p>Depending on applicable laws, you may request to:</p>
+      <ul><li>Access your personal data</li><li>Correct inaccurate information</li><li>Request deletion of data (subject to legal obligations)</li></ul>
+      <p>Requests can be sent to our official email addresses.</p>
+      <h2>8. Third-Party Links</h2>
+      <p>Resumewallah.in may contain links to third-party websites. We are not responsible for their privacy practices and encourage users to review their policies separately.</p>
+      <h2>9. Children's Privacy</h2>
+      <p>Our services are not intended for children under 13 years of age. We do not knowingly collect data from minors.</p>
+      <h2>10. Changes to This Privacy Policy</h2>
+      <p>Resumewallah reserves the right to update or modify this Privacy Policy at any time without prior notice. Continued use of the website constitutes acceptance of the updated policy.</p>
+      <h2>11. Contact Information</h2>
+      <p>For any privacy-related queries or requests, contact us at <a href="mailto:legal@resumewallah.com">legal@resumewallah.com</a>.</p>
+    </article>
+
+    <article class="doc" id="doc-refund">
+      <h1>Refund &amp; Billing Policy</h1>
+      <p class="upd">Last updated: January 2026</p>
+      <p>This Refund &amp; Billing Policy applies to all services offered on Resumewallah.in ("Resumewallah", "we", "us", "our"). By purchasing or using any service from Resumewallah, you agree to the terms outlined below.</p>
+      <h2>1. No Refund Policy (General)</h2>
+      <p>Resumewallah provides customized, personalized, and writer-created services, including but not limited to resume writing, editing, optimization, and related professional services.</p>
+      <p>Due to the nature of the product and service, all purchases made on Resumewallah are non-refundable. Once an order is placed and work has started, no refund, cancellation, or reversal will be permitted under any circumstances. This includes, but is not limited to:</p>
+      <ul><li>Change of mind</li><li>Dissatisfaction based on personal expectations</li><li>Lack of interview calls or job offers</li><li>Delay caused by user-side information submission</li><li>Market or recruiter-related outcomes</li></ul>
+      <p>Since the service involves time, expertise, and intellectual effort of professional writers, refunds are strictly not applicable.</p>
+      <h2>2. Portfolio Plan – Hosting &amp; Billing Terms</h2>
+      <p>If you purchase a Portfolio-related plan from Resumewallah, the following billing terms apply:</p>
+      <ul><li>The first year of hosting is provided free of cost, unless explicitly stated otherwise at the time of purchase</li><li>After the first year, hosting charges, renewal fees, and maintenance costs will apply</li><li>These charges may vary based on hosting provider costs, technical requirements, maintenance scope, and market factors</li></ul>
+      <p>Resumewallah reserves the right to revise hosting, renewal, or maintenance charges in the future. For detailed and updated pricing, refer to the <a href="#legal-charges">Schedule of Charges</a>.</p>
+      <h2>3. Maintenance &amp; Additional Charges</h2>
+      <p>Any additional services such as website updates, design changes, content modifications, technical maintenance, or feature enhancements may be subject to separate charges, depending on the scope of work. Such charges will be communicated separately and are not included unless explicitly mentioned.</p>
+      <h2>4. Billing Accuracy &amp; User Responsibility</h2>
+      <p>Users are responsible for:</p>
+      <ul><li>Reviewing service details before making payment</li><li>Understanding the scope, pricing, and inclusions</li><li>Providing correct billing information</li></ul>
+      <p>Resumewallah is not responsible for issues arising from incorrect user-provided details.</p>
+      <h2>5. Chargebacks &amp; Payment Disputes</h2>
+      <p>Any attempt to initiate a chargeback, payment reversal, or dispute after service delivery or work initiation may result in:</p>
+      <ul><li>Immediate suspension of services</li><li>Permanent account restriction</li><li>Legal or recovery action, if applicable</li></ul>
+      <h2>6. Policy Changes</h2>
+      <p>Resumewallah reserves the right to update, modify, or replace this Refund &amp; Billing Policy at any time without prior notice. Continued use of services constitutes acceptance of the revised policy.</p>
+      <h2>7. Contact Information</h2>
+      <p>For billing-related questions or clarifications, contact us at <a href="mailto:support@resumewallah.com">support@resumewallah.com</a>.</p>
+    </article>
+
+    <article class="doc" id="doc-disclaimer">
+      <h1>Disclaimer</h1>
+      <p class="upd">Last updated: January 2026</p>
+      <p>The information and services provided by Resumewallah ("Resumewallah", "we", "us", "our") on Resumewallah.in are for general informational and professional service purposes only. By using this website or any of our services, you acknowledge and agree to this Disclaimer.</p>
+      <h2>1. No Job or Career Guarantee</h2>
+      <p>Resumewallah is a resume writing and career-support service provider only. We do not guarantee:</p>
+      <ul><li>Job placement</li><li>Interview calls</li><li>Employment offers</li><li>Salary increase</li><li>Career growth or success</li></ul>
+      <p>Any outcomes resulting from the use of our services depend on multiple external factors such as job market conditions, recruiter preferences, company policies, and the user's skills, experience, and qualifications, which are beyond Resumewallah's control.</p>
+      <h2>2. Professional Judgment &amp; User Responsibility</h2>
+      <p>All resumes, portfolios, and related content are created based on information provided by the user. While we apply professional expertise and best practices, the final responsibility for accuracy, truthfulness, and usage of the content lies solely with the user.</p>
+      <p>Resumewallah is not responsible for:</p>
+      <ul><li>Rejection by employers or recruiters</li><li>Background verification issues</li><li>Consequences arising from incorrect or misleading information provided by the user</li></ul>
+      <h2>3. No Legal, HR, or Financial Advice</h2>
+      <p>Resumewallah does not provide legal, human resources, financial, or employment advice. Any guidance offered is general in nature and should not be considered a substitute for professional advice from qualified experts.</p>
+      <h2>4. Portfolio &amp; Website Services Disclaimer</h2>
+      <p>For portfolio-related plans:</p>
+      <ul><li>Free hosting is applicable only for the first year, unless stated otherwise</li><li>Post first year, hosting, renewal, and maintenance charges will apply</li><li>Charges and services are subject to change</li></ul>
+      <p>Users are advised to refer to the <a href="#legal-charges">Schedule of Charges</a> for updated pricing and details.</p>
+      <h2>5. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Resumewallah shall not be liable for any:</p>
+      <ul><li>Direct or indirect losses</li><li>Loss of income, opportunity, or employment</li><li>Reputation or career-related damages</li></ul>
+      <p>Use of Resumewallah's services is at the user's sole risk.</p>
+      <h2>6. Sample Resumes on This Website</h2>
+      <p>The sample resumes shown on this website are illustrative examples created to demonstrate format and writing style. Names, companies, and details in them are fictional and do not represent real individuals or clients.</p>
+      <h2>7. External Links &amp; Third Parties</h2>
+      <p>Resumewallah.in may contain links to third-party websites or tools. Resumewallah does not control or endorse such websites and is not responsible for their content, services, or policies.</p>
+      <h2>8. Changes to Disclaimer</h2>
+      <p>Resumewallah reserves the right to modify or update this Disclaimer at any time without prior notice. Continued use of the website or services constitutes acceptance of the updated Disclaimer.</p>
+      <h2>9. Contact Information</h2>
+      <p>For questions related to this Disclaimer, please contact <a href="mailto:support@resumewallah.com">support@resumewallah.com</a>.</p>
+    </article>
+
+    <article class="doc" id="doc-charges">
+      <h1>Schedule of Charges</h1>
+      <p class="upd">Last updated: January 2026</p>
+      <p>This Schedule of Charges outlines the applicable fees for services offered by Resumewallah ("Resumewallah", "we", "us", "our"). All charges mentioned below are subject to change at Resumewallah's discretion. By using our services, you agree to this Schedule of Charges.</p>
+      <h2>1. Plans</h2>
+      <div class="tbl"><table>
+        <tr><th>Plan</th><th>Price</th><th>Delivery</th><th>Includes</th></tr>
+        <tr><td>Pro Plan</td><td>₹299</td><td>24 hours</td><td>ATS-friendly resume, professional layout, written by a professional writer, 1 free revision</td></tr>
+        <tr><td>Ultra Plan</td><td>₹499</td><td>12 hours</td><td>Everything in Pro, Ultra resume, free community access, priority support</td></tr>
+        <tr><td>Complete Profile</td><td>₹1,499</td><td>48 hours</td><td>Everything in Ultra, LinkedIn profile optimisation, Naukri profile optimisation, 2 free revisions</td></tr>
+      </table></div>
+      <p>Paying online via UPI gives an additional 5% discount on the plan price.</p>
+      <h2>2. Revisions Policy</h2>
+      <ul><li>1 revision is provided free of cost with applicable services</li><li>After the free revision is used, each additional revision will be charged at <strong>₹50 per revision</strong></li><li>Revision requests must be limited to the original scope of work</li><li>Major changes or rework may be treated as a new service and charged separately</li></ul>
+      <h2>3. Custom Domain Setup Charges</h2>
+      <ul><li>Custom domain setup service is available at a one-time charge of <strong>₹299</strong></li><li>This amount is charged as a convenience / setup fee</li><li>Domain purchase cost (if applicable) is separate and not included unless explicitly stated</li></ul>
+      <h2>4. Portfolio Update Charges</h2>
+      <p>For portfolio-related plans:</p>
+      <ul><li>Any update or modification to the portfolio will be charged at <strong>₹99 per update</strong></li><li>A maximum of 30 updates per month are allowed</li><li>Unused updates do not carry forward to the next month</li><li>Updates beyond the monthly limit may be declined or charged separately</li></ul>
+      <h2>5. Scope of Updates</h2>
+      <p>Updates may include content changes, text edits, image replacements, and minor layout adjustments. Major redesigns, feature additions, or structural changes are not included and may be charged separately.</p>
+      <h2>6. Changes to Charges</h2>
+      <p>Resumewallah reserves the right to revise, update, or modify this Schedule of Charges at any time without prior notice. Updated charges will be published on the website and will apply going forward.</p>
+      <h2>7. Contact Information</h2>
+      <p>For clarification regarding charges or billing, please contact <a href="mailto:support@resumewallah.com">support@resumewallah.com</a>.</p>
+    </article>
+  </div>
+</div>
+
+<!-- ================= PAYMENT (UPI QR) ================= -->
+<!-- EDIT: UPI ID neeche "UPI_ID" mein hai. Payee name "UPI_NAME". -->
+<div class="pay" id="pay" role="dialog" aria-modal="true" aria-label="Order and payment">
+  <div class="card">
+    <button class="x" id="payX" aria-label="Close">×</button>
+    <div id="payStep1">
+      <h3>Excellent choice!</h3>
+      <p class="sub">Select how you'd like to order.</p>
+      <div class="plan-line"><span id="p1name">Pro Plan</span><strong id="p1price">₹299</strong></div>
+      <div class="stack">
+        <button class="btn btn-grad" type="button" id="payOnline">Pay online <span class="off">Extra 5% OFF</span></button>
+        <a class="btn" style="background:#25D366;color:#fff" id="payWA" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <p class="hint" style="margin-top:1rem">By ordering you agree to our <a href="#legal-terms">Terms</a> and <a href="#legal-refund">Refund Policy</a>.</p>
+    </div>
+    <div id="payStep2" hidden>
+      <h3>Complete your payment</h3>
+      <p class="sub" id="p2name">Pro Plan</p>
+      <div class="amt"><s id="p2old">₹299</s><span class="now" id="p2new">₹284</span><small id="p2disc">5% online discount applied</small></div>
+      <div class="qrbox" id="qrbox"><span style="font-size:.85rem;color:#666">Generating QR…</span></div>
+      <p class="timer">Complete payment in <b id="payTimer">10:00</b></p>
+      <p class="hint">Scan with any UPI app (GPay, PhonePe, Paytm), or tap the button below on your phone.</p>
+      <div class="row2">
+        <a class="btn btn-grad btn-sm" id="upiOpen" href="#">Open UPI app</a>
+        <button class="ghost" type="button" id="qrSave">Save QR</button>
+      </div>
+      <div class="upi"><span>UPI ID: <code id="upiIdText"></code></span><button type="button" id="upiCopy">Copy</button></div>
+      <button class="btn btn-light" type="button" id="payDone" style="width:100%;border:1px solid var(--line)" disabled>Payment done (wait 30s)</button>
+      <p class="hint" style="margin-top:.8rem;margin-bottom:0">After paying, send the screenshot on WhatsApp so your writer can start.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= ADMIN PANEL (site-url/#admin) ================= -->
+<div class="admin" id="admin" role="dialog" aria-modal="true" aria-label="Admin panel">
+  <div class="top">
+    <a href="#" class="logo" id="adminHome"><i>R</i>RESUMEWALLAH <span style="font-weight:400;opacity:.7;margin-left:.3rem">Admin</span></a>
+    <div class="acts" id="adminActs" hidden>
+      <button class="btn btn-glass" type="button" id="adPreview">Preview on this device</button>
+      <button class="btn btn-grad" type="button" id="adDownload">Download updated index.html</button>
+      <button class="btn btn-glass" type="button" id="adClose">Close</button>
+    </div>
+    <button class="btn btn-glass" type="button" id="adClose2">Close</button>
+  </div>
+  <div class="wrap">
+    <div class="login" id="adLogin">
+      <h2>Admin login</h2>
+      <p>Enter the admin password to edit site content.</p>
+      <input type="password" id="adPass" placeholder="Password" autocomplete="current-password">
+      <div class="err" id="adErr"></div>
+      <button class="btn btn-grad" type="button" id="adGo" style="margin-top:1rem;width:100%">Login</button>
+    </div>
+    <div id="adPanel" hidden>
+      <div class="note"><b>Ye kaise kaam karta hai</b>
+        1) Neeche fields edit karo. 2) <b style="display:inline">Preview on this device</b> dabao: changes sirf aapke browser mein dikhenge (visitors ko nahi). 3) Sab theek lage to <b style="display:inline">Download updated index.html</b> dabao aur wo file apni hosting (Netlify/cPanel) pe purani index.html ki jagah upload kar do. Tab changes sabko dikhenge.
+      </div>
+
+      <div class="sec"><h3>Business details</h3><p class="desc">Ye har jagah apne aap update hote hain: buttons, footer, payment, legal pages.</p>
+        <div class="g2">
+          <label>WhatsApp number <small>Country code ke saath, bina + ke. Jaise 919565698084</small><input id="f_whatsapp"></label>
+          <label>Instagram link<input id="f_instagram"></label>
+          <label>Support email<input id="f_supportEmail"></label>
+          <label>Legal email<input id="f_legalEmail"></label>
+          <label>UPI ID <small>Isi pe payment aayega</small><input id="f_upiId"></label>
+          <label>UPI payee name<input id="f_upiName"></label>
+          <label>Online payment discount (%) <small>0 likho to discount band</small><input id="f_onlineDiscount" type="number" min="0" max="90"></label>
+          <label>Admin password<input id="f_adminPassword"></label>
+        </div>
+      </div>
+
+      <div class="sec"><h3>Hero (top section)</h3>
+        <label>Offer pill text<input id="f_hero_pill"></label>
+        <label>Headline<input id="f_hero_title"></label>
+        <label>Sub text<textarea id="f_hero_lead"></textarea></label>
+        <label>3 stats <small>Ek line mein ek: Bada text | chhota text</small><textarea id="f_hero_stats"></textarea></label>
+      </div>
+
+      <div class="sec"><h3>Pricing</h3>
+        <div class="g2"><label>Section title<input id="f_pricing_title"></label><label>Section sub text<input id="f_pricing_sub"></label></div>
+        <div id="planEdits"></div>
+      </div>
+
+      <div class="sec"><h3>Reviews</h3><p class="desc">Sirf asli client reviews lagao. Section tabhi dikhega jab "Show" on ho aur kam se kam ek review ho.</p>
+        <div class="chk"><input type="checkbox" id="f_reviews_show"><label for="f_reviews_show" style="margin:0">Show reviews section</label></div>
+        <label>Section title<input id="f_reviews_title"></label>
+        <label>Reviews <small>Ek line mein ek: Naam | Job title | Review text</small><textarea id="f_reviews_items" style="min-height:130px"></textarea></label>
+        <label>WhatsApp screenshot image links <small>Ek line mein ek image URL (jaise images/review1.jpg). Khaali chhodo to nahi dikhega.</small><textarea id="f_reviews_shots"></textarea></label>
+        <label>Client voice note audio link <small>mp3/ogg file ka URL. Khaali chhodo to player nahi dikhega.</small><input id="f_reviews_voice"></label>
+      </div>
+
+      <div class="sec"><h3>FAQ</h3>
+        <label>Questions &amp; answers <small>Format: pehli line sawaal, agli line jawaab, phir ek khaali line. Aise hi repeat.</small><textarea id="f_faq" style="min-height:260px"></textarea></label>
+      </div>
+
+      <div class="sec"><h3>Bottom CTA band</h3>
+        <label>Title<input id="f_band_title"></label>
+        <label>Text<input id="f_band_text"></label>
+        <label>Button text<input id="f_band_cta"></label>
+      </div>
+
+      <div class="sec"><h3>Backup / advanced</h3><p class="desc">Config ka JSON. Download kaam na kare to ye copy karke index.html mein <code>&lt;script id="siteConfig"&gt;</code> ke andar paste kar do.</p>
+        <textarea id="f_json" class="out" style="min-height:160px" readonly></textarea>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem">
+          <button class="btn btn-grad btn-sm" type="button" id="adCopyJson">Copy JSON</button>
+          <button class="btn btn-sm" type="button" id="adReset" style="background:var(--bg);color:var(--ink);border:1px solid var(--line)">Reset preview (file version wapas)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="adToast"></div>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Sample resume">
+  <div class="box">
+    <button class="x" id="mx" aria-label="Close">×</button>
+    <div id="mbody"></div>
+    <div class="mcta-in"><a class="btn btn-grad" href="#pricing" id="mgo">Get a resume like this</a></div>
+  </div>
+</div>
+
+<div class="mcta">
+  <a class="btn btn-grad" href="#pricing">See plans</a>
+  <a class="btn" style="background:#25D366;color:#fff" data-wa="Hi%20ResumeWallah%2C%20I%20want%20a%20new%20resume" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<a class="wa-float" data-wa="" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+</a>
+
+<script>
+/* QR Code Generator for JavaScript (c) 2009 Kazuhiko Arase, MIT license, https://github.com/kazuhikoarase/qrcode-generator */
+var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],f={},c=function(t,r){o=function(t){for(var r=new Array(t),e=0;e<t;e+=1){r[e]=new Array(t);for(var n=0;n<t;n+=1)r[e][n]=null}return r}(i=4*e+17),l(0,0),l(i-7,0),l(0,i-7),s(),h(),d(t,r),e>=7&&v(t),null==a&&(a=p(e,n,u)),w(a,r)},l=function(t,r){for(var e=-1;e<=7;e+=1)if(!(t+e<=-1||i<=t+e))for(var n=-1;n<=7;n+=1)r+n<=-1||i<=r+n||(o[t+e][r+n]=0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4)},h=function(){for(var t=8;t<i-8;t+=1)null==o[t][6]&&(o[t][6]=t%2==0);for(var r=8;r<i-8;r+=1)null==o[6][r]&&(o[6][r]=r%2==0)},s=function(){for(var t=B.getPatternPosition(e),r=0;r<t.length;r+=1)for(var n=0;n<t.length;n+=1){var i=t[r],a=t[n];if(null==o[i][a])for(var u=-2;u<=2;u+=1)for(var f=-2;f<=2;f+=1)o[i+u][a+f]=-2==u||2==u||-2==f||2==f||0==u&&0==f}},v=function(t){for(var r=B.getBCHTypeNumber(e),n=0;n<18;n+=1){var a=!t&&1==(r>>n&1);o[Math.floor(n/3)][n%3+i-8-3]=a}for(n=0;n<18;n+=1){a=!t&&1==(r>>n&1);o[n%3+i-8-3][Math.floor(n/3)]=a}},d=function(t,r){for(var e=n<<3|r,a=B.getBCHTypeInfo(e),u=0;u<15;u+=1){var f=!t&&1==(a>>u&1);u<6?o[u][8]=f:u<8?o[u+1][8]=f:o[i-15+u][8]=f}for(u=0;u<15;u+=1){f=!t&&1==(a>>u&1);u<8?o[8][i-u-1]=f:u<9?o[8][15-u-1+1]=f:o[8][15-u-1]=f}o[i-8][8]=!t},w=function(t,r){for(var e=-1,n=i-1,a=7,u=0,f=B.getMaskFunction(r),c=i-1;c>0;c-=2)for(6==c&&(c-=1);;){for(var g=0;g<2;g+=1)if(null==o[n][c-g]){var l=!1;u<t.length&&(l=1==(t[u]>>>a&1)),f(n,c-g)&&(l=!l),o[n][c-g]=l,-1==(a-=1)&&(u+=1,a=7)}if((n+=e)<0||i<=n){n-=e,e=-e;break}}},p=function(t,r,e){for(var n=A.getRSBlocks(t,r),o=b(),i=0;i<e.length;i+=1){var a=e[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var u=0;for(i=0;i<n.length;i+=1)u+=n[i].dataCount;if(o.getLengthInBits()>8*u)throw"code length overflow. ("+o.getLengthInBits()+">"+8*u+")";for(o.getLengthInBits()+4<=8*u&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=8*u||(o.put(236,8),o.getLengthInBits()>=8*u));)o.put(17,8);return function(t,r){for(var e=0,n=0,o=0,i=new Array(r.length),a=new Array(r.length),u=0;u<r.length;u+=1){var f=r[u].dataCount,c=r[u].totalCount-f;n=Math.max(n,f),o=Math.max(o,c),i[u]=new Array(f);for(var g=0;g<i[u].length;g+=1)i[u][g]=255&t.getBuffer()[g+e];e+=f;var l=B.getErrorCorrectPolynomial(c),h=k(i[u],l.getLength()-1).mod(l);for(a[u]=new Array(l.getLength()-1),g=0;g<a[u].length;g+=1){var s=g+h.getLength()-a[u].length;a[u][g]=s>=0?h.getAt(s):0}}var v=0;for(g=0;g<r.length;g+=1)v+=r[g].totalCount;var d=new Array(v),w=0;for(g=0;g<n;g+=1)for(u=0;u<r.length;u+=1)g<i[u].length&&(d[w]=i[u][g],w+=1);for(g=0;g<o;g+=1)for(u=0;u<r.length;u+=1)g<a[u].length&&(d[w]=a[u][g],w+=1);return d}(o,n)};f.addData=function(t,r){var e=null;switch(r=r||"Byte"){case"Numeric":e=M(t);break;case"Alphanumeric":e=x(t);break;case"Byte":e=m(t);break;case"Kanji":e=L(t);break;default:throw"mode:"+r}u.push(e),a=null},f.isDark=function(t,r){if(t<0||i<=t||r<0||i<=r)throw t+","+r;return o[t][r]},f.getModuleCount=function(){return i},f.make=function(){if(e<1){for(var t=1;t<40;t++){for(var r=A.getRSBlocks(t,n),o=b(),i=0;i<u.length;i++){var a=u[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var g=0;for(i=0;i<r.length;i++)g+=r[i].dataCount;if(o.getLengthInBits()<=8*g)break}e=t}c(!1,function(){for(var t=0,r=0,e=0;e<8;e+=1){c(!0,e);var n=B.getLostPoint(f);(0==e||t>n)&&(t=n,r=e)}return r}())},f.createTableTag=function(t,r){t=t||2;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+(r=void 0===r?4*t:r)+"px;",e+='">',e+="<tbody>";for(var n=0;n<f.getModuleCount();n+=1){e+="<tr>";for(var o=0;o<f.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+t+"px;",e+=" height: "+t+"px;",e+=" background-color: ",e+=f.isDark(n,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>"},f.createSvgTag=function(t,r,e,n){var o={};"object"==typeof arguments[0]&&(t=(o=arguments[0]).cellSize,r=o.margin,e=o.alt,n=o.title),t=t||2,r=void 0===r?4*t:r,(e="string"==typeof e?{text:e}:e||{}).text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,(n="string"==typeof n?{text:n}:n||{}).text=n.text||null,n.id=n.text?n.id||"qrcode-title":null;var i,a,u,c,g=f.getModuleCount()*t+2*r,l="";for(c="l"+t+",0 0,"+t+" -"+t+",0 0,-"+t+"z ",l+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',l+=o.scalable?"":' width="'+g+'px" height="'+g+'px"',l+=' viewBox="0 0 '+g+" "+g+'" ',l+=' preserveAspectRatio="xMinYMin meet"',l+=n.text||e.text?' role="img" aria-labelledby="'+y([n.id,e.id].join(" ").trim())+'"':"",l+=">",l+=n.text?'<title id="'+y(n.id)+'">'+y(n.text)+"</title>":"",l+=e.text?'<description id="'+y(e.id)+'">'+y(e.text)+"</description>":"",l+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',l+='<path d="',a=0;a<f.getModuleCount();a+=1)for(u=a*t+r,i=0;i<f.getModuleCount();i+=1)f.isDark(a,i)&&(l+="M"+(i*t+r)+","+u+c);return l+='" stroke="transparent" fill="black"/>',l+="</svg>"},f.createDataURL=function(t,r){t=t||2,r=void 0===r?4*t:r;var e=f.getModuleCount()*t+2*r,n=r,o=e-r;return I(e,e,function(r,e){if(n<=r&&r<o&&n<=e&&e<o){var i=Math.floor((r-n)/t),a=Math.floor((e-n)/t);return f.isDark(a,i)?0:1}return 1})},f.createImgTag=function(t,r,e){t=t||2,r=void 0===r?4*t:r;var n=f.getModuleCount()*t+2*r,o="";return o+="<img",o+=' src="',o+=f.createDataURL(t,r),o+='"',o+=' width="',o+=n,o+='"',o+=' height="',o+=n,o+='"',e&&(o+=' alt="',o+=y(e),o+='"'),o+="/>"};var y=function(t){for(var r="",e=0;e<t.length;e+=1){var n=t.charAt(e);switch(n){case"<":r+="&lt;";break;case">":r+="&gt;";break;case"&":r+="&amp;";break;case'"':r+="&quot;";break;default:r+=n}}return r};return f.createASCII=function(t,r){if((t=t||1)<2)return function(t){t=void 0===t?2:t;var r,e,n,o,i,a=1*f.getModuleCount()+2*t,u=t,c=a-t,g={"██":"█","█ ":"▀"," █":"▄","  ":" "},l={"██":"▀","█ ":"▀"," █":" ","  ":" "},h="";for(r=0;r<a;r+=2){for(n=Math.floor((r-u)/1),o=Math.floor((r+1-u)/1),e=0;e<a;e+=1)i="█",u<=e&&e<c&&u<=r&&r<c&&f.isDark(n,Math.floor((e-u)/1))&&(i=" "),u<=e&&e<c&&u<=r+1&&r+1<c&&f.isDark(o,Math.floor((e-u)/1))?i+=" ":i+="█",h+=t<1&&r+1>=c?l[i]:g[i];h+="\n"}return a%2&&t>0?h.substring(0,h.length-a-1)+Array(a+1).join("▀"):h.substring(0,h.length-1)}(r);t-=1,r=void 0===r?2*t:r;var e,n,o,i,a=f.getModuleCount()*t+2*r,u=r,c=a-r,g=Array(t+1).join("██"),l=Array(t+1).join("  "),h="",s="";for(e=0;e<a;e+=1){for(o=Math.floor((e-u)/t),s="",n=0;n<a;n+=1)i=1,u<=n&&n<c&&u<=e&&e<c&&f.isDark(o,Math.floor((n-u)/t))&&(i=0),s+=i?g:l;for(o=0;o<t;o+=1)h+=s+"\n"}return h.substring(0,h.length-1)},f.renderTo2dContext=function(t,r){r=r||2;for(var e=f.getModuleCount(),n=0;n<e;n++)for(var o=0;o<e;o++)t.fillStyle=f.isDark(n,o)?"black":"white",t.fillRect(n*r,o*r,r,r)},f};t.stringToBytes=(t.stringToBytesFuncs={default:function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);r.push(255&n)}return r}}).default,t.createStringToBytes=function(t,r){var e=function(){for(var e=S(t),n=function(){var t=e.read();if(-1==t)throw"eof";return t},o=0,i={};;){var a=e.read();if(-1==a)break;var u=n(),f=n()<<8|n();i[String.fromCharCode(a<<8|u)]=f,o+=1}if(o!=r)throw o+" != "+r;return i}(),n="?".charCodeAt(0);return function(t){for(var r=[],o=0;o<t.length;o+=1){var i=t.charCodeAt(o);if(i<128)r.push(i);else{var a=e[t.charAt(o)];"number"==typeof a?(255&a)==a?r.push(a):(r.push(a>>>8),r.push(255&a)):r.push(n)}}return r}};var r,e,n,o,i,a=1,u=2,f=4,c=8,g={L:1,M:0,Q:3,H:2},l=0,h=1,s=2,v=3,d=4,w=5,p=6,y=7,B=(r=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],e=1335,n=7973,i=function(t){for(var r=0;0!=t;)r+=1,t>>>=1;return r},(o={}).getBCHTypeInfo=function(t){for(var r=t<<10;i(r)-i(e)>=0;)r^=e<<i(r)-i(e);return 21522^(t<<10|r)},o.getBCHTypeNumber=function(t){for(var r=t<<12;i(r)-i(n)>=0;)r^=n<<i(r)-i(n);return t<<12|r},o.getPatternPosition=function(t){return r[t-1]},o.getMaskFunction=function(t){switch(t){case l:return function(t,r){return(t+r)%2==0};case h:return function(t,r){return t%2==0};case s:return function(t,r){return r%3==0};case v:return function(t,r){return(t+r)%3==0};case d:return function(t,r){return(Math.floor(t/2)+Math.floor(r/3))%2==0};case w:return function(t,r){return t*r%2+t*r%3==0};case p:return function(t,r){return(t*r%2+t*r%3)%2==0};case y:return function(t,r){return(t*r%3+(t+r)%2)%2==0};default:throw"bad maskPattern:"+t}},o.getErrorCorrectPolynomial=function(t){for(var r=k([1],0),e=0;e<t;e+=1)r=r.multiply(k([1,C.gexp(e)],0));return r},o.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case a:return 10;case u:return 9;case f:case c:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case a:return 12;case u:return 11;case f:return 16;case c:return 10;default:throw"mode:"+t}else{if(!(r<41))throw"type:"+r;switch(t){case a:return 14;case u:return 13;case f:return 16;case c:return 12;default:throw"mode:"+t}}},o.getLostPoint=function(t){for(var r=t.getModuleCount(),e=0,n=0;n<r;n+=1)for(var o=0;o<r;o+=1){for(var i=0,a=t.isDark(n,o),u=-1;u<=1;u+=1)if(!(n+u<0||r<=n+u))for(var f=-1;f<=1;f+=1)o+f<0||r<=o+f||0==u&&0==f||a==t.isDark(n+u,o+f)&&(i+=1);i>5&&(e+=3+i-5)}for(n=0;n<r-1;n+=1)for(o=0;o<r-1;o+=1){var c=0;t.isDark(n,o)&&(c+=1),t.isDark(n+1,o)&&(c+=1),t.isDark(n,o+1)&&(c+=1),t.isDark(n+1,o+1)&&(c+=1),0!=c&&4!=c||(e+=3)}for(n=0;n<r;n+=1)for(o=0;o<r-6;o+=1)t.isDark(n,o)&&!t.isDark(n,o+1)&&t.isDark(n,o+2)&&t.isDark(n,o+3)&&t.isDark(n,o+4)&&!t.isDark(n,o+5)&&t.isDark(n,o+6)&&(e+=40);for(o=0;o<r;o+=1)for(n=0;n<r-6;n+=1)t.isDark(n,o)&&!t.isDark(n+1,o)&&t.isDark(n+2,o)&&t.isDark(n+3,o)&&t.isDark(n+4,o)&&!t.isDark(n+5,o)&&t.isDark(n+6,o)&&(e+=40);var g=0;for(o=0;o<r;o+=1)for(n=0;n<r;n+=1)t.isDark(n,o)&&(g+=1);return e+=Math.abs(100*g/r/r-50)/5*10},o),C=function(){for(var t=new Array(256),r=new Array(256),e=0;e<8;e+=1)t[e]=1<<e;for(e=8;e<256;e+=1)t[e]=t[e-4]^t[e-5]^t[e-6]^t[e-8];for(e=0;e<255;e+=1)r[t[e]]=e;var n={glog:function(t){if(t<1)throw"glog("+t+")";return r[t]},gexp:function(r){for(;r<0;)r+=255;for(;r>=256;)r-=255;return t[r]}};return n}();function k(t,r){if(void 0===t.length)throw t.length+"/"+r;var e=function(){for(var e=0;e<t.length&&0==t[e];)e+=1;for(var n=new Array(t.length-e+r),o=0;o<t.length-e;o+=1)n[o]=t[o+e];return n}(),n={getAt:function(t){return e[t]},getLength:function(){return e.length},multiply:function(t){for(var r=new Array(n.getLength()+t.getLength()-1),e=0;e<n.getLength();e+=1)for(var o=0;o<t.getLength();o+=1)r[e+o]^=C.gexp(C.glog(n.getAt(e))+C.glog(t.getAt(o)));return k(r,0)},mod:function(t){if(n.getLength()-t.getLength()<0)return n;for(var r=C.glog(n.getAt(0))-C.glog(t.getAt(0)),e=new Array(n.getLength()),o=0;o<n.getLength();o+=1)e[o]=n.getAt(o);for(o=0;o<t.getLength();o+=1)e[o]^=C.gexp(C.glog(t.getAt(o))+r);return k(e,0).mod(t)}};return n}var A=function(){var t=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],r=function(t,r){var e={};return e.totalCount=t,e.dataCount=r,e},e={};return e.getRSBlocks=function(e,n){var o=function(r,e){switch(e){case g.L:return t[4*(r-1)+0];case g.M:return t[4*(r-1)+1];case g.Q:return t[4*(r-1)+2];case g.H:return t[4*(r-1)+3];default:return}}(e,n);if(void 0===o)throw"bad rs block @ typeNumber:"+e+"/errorCorrectionLevel:"+n;for(var i=o.length/3,a=[],u=0;u<i;u+=1)for(var f=o[3*u+0],c=o[3*u+1],l=o[3*u+2],h=0;h<f;h+=1)a.push(r(c,l));return a},e}(),b=function(){var t=[],r=0,e={getBuffer:function(){return t},getAt:function(r){var e=Math.floor(r/8);return 1==(t[e]>>>7-r%8&1)},put:function(t,r){for(var n=0;n<r;n+=1)e.putBit(1==(t>>>r-n-1&1))},getLengthInBits:function(){return r},putBit:function(e){var n=Math.floor(r/8);t.length<=n&&t.push(0),e&&(t[n]|=128>>>r%8),r+=1}};return e},M=function(t){var r=a,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+2<r.length;)t.put(o(r.substring(n,n+3)),10),n+=3;n<r.length&&(r.length-n==1?t.put(o(r.substring(n,n+1)),4):r.length-n==2&&t.put(o(r.substring(n,n+2)),7))}},o=function(t){for(var r=0,e=0;e<t.length;e+=1)r=10*r+i(t.charAt(e));return r},i=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);throw"illegal char :"+t};return n},x=function(t){var r=u,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+1<r.length;)t.put(45*o(r.charAt(n))+o(r.charAt(n+1)),11),n+=2;n<r.length&&t.put(o(r.charAt(n)),6)}},o=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);if("A"<=t&&t<="Z")return t.charCodeAt(0)-"A".charCodeAt(0)+10;switch(t){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+t}};return n},m=function(r){var e=f,n=t.stringToBytes(r),o={getMode:function(){return e},getLength:function(t){return n.length},write:function(t){for(var r=0;r<n.length;r+=1)t.put(n[r],8)}};return o},L=function(r){var e=c,n=t.stringToBytesFuncs.SJIS;if(!n)throw"sjis not supported.";!function(){var t=n("友");if(2!=t.length||38726!=(t[0]<<8|t[1]))throw"sjis not supported."}();var o=n(r),i={getMode:function(){return e},getLength:function(t){return~~(o.length/2)},write:function(t){for(var r=o,e=0;e+1<r.length;){var n=(255&r[e])<<8|255&r[e+1];if(33088<=n&&n<=40956)n-=33088;else{if(!(57408<=n&&n<=60351))throw"illegal char at "+(e+1)+"/"+n;n-=49472}n=192*(n>>>8&255)+(255&n),t.put(n,13),e+=2}if(e<r.length)throw"illegal char at "+(e+1)}};return i},D=function(){var t=[],r={writeByte:function(r){t.push(255&r)},writeShort:function(t){r.writeByte(t),r.writeByte(t>>>8)},writeBytes:function(t,e,n){e=e||0,n=n||t.length;for(var o=0;o<n;o+=1)r.writeByte(t[o+e])},writeString:function(t){for(var e=0;e<t.length;e+=1)r.writeByte(t.charCodeAt(e))},toByteArray:function(){return t},toString:function(){var r="";r+="[";for(var e=0;e<t.length;e+=1)e>0&&(r+=","),r+=t[e];return r+="]"}};return r},S=function(t){var r=t,e=0,n=0,o=0,i={read:function(){for(;o<8;){if(e>=r.length){if(0==o)return-1;throw"unexpected end of file./"+o}var t=r.charAt(e);if(e+=1,"="==t)return o=0,-1;t.match(/^\s$/)||(n=n<<6|a(t.charCodeAt(0)),o+=6)}var i=n>>>o-8&255;return o-=8,i}},a=function(t){if(65<=t&&t<=90)return t-65;if(97<=t&&t<=122)return t-97+26;if(48<=t&&t<=57)return t-48+52;if(43==t)return 62;if(47==t)return 63;throw"c:"+t};return i},I=function(t,r,e){for(var n=function(t,r){var e=t,n=r,o=new Array(t*r),i={setPixel:function(t,r,n){o[r*e+t]=n},write:function(t){t.writeString("GIF87a"),t.writeShort(e),t.writeShort(n),t.writeByte(128),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(255),t.writeByte(255),t.writeByte(255),t.writeString(","),t.writeShort(0),t.writeShort(0),t.writeShort(e),t.writeShort(n),t.writeByte(0);var r=a(2);t.writeByte(2);for(var o=0;r.length-o>255;)t.writeByte(255),t.writeBytes(r,o,255),o+=255;t.writeByte(r.length-o),t.writeBytes(r,o,r.length-o),t.writeByte(0),t.writeString(";")}},a=function(t){for(var r=1<<t,e=1+(1<<t),n=t+1,i=u(),a=0;a<r;a+=1)i.add(String.fromCharCode(a));i.add(String.fromCharCode(r)),i.add(String.fromCharCode(e));var f,c,g,l=D(),h=(f=l,c=0,g=0,{write:function(t,r){if(t>>>r!=0)throw"length over";for(;c+r>=8;)f.writeByte(255&(t<<c|g)),r-=8-c,t>>>=8-c,g=0,c=0;g|=t<<c,c+=r},flush:function(){c>0&&f.writeByte(g)}});h.write(r,n);var s=0,v=String.fromCharCode(o[s]);for(s+=1;s<o.length;){var d=String.fromCharCode(o[s]);s+=1,i.contains(v+d)?v+=d:(h.write(i.indexOf(v),n),i.size()<4095&&(i.size()==1<<n&&(n+=1),i.add(v+d)),v=d)}return h.write(i.indexOf(v),n),h.write(e,n),h.flush(),l.toByteArray()},u=function(){var t={},r=0,e={add:function(n){if(e.contains(n))throw"dup key:"+n;t[n]=r,r+=1},size:function(){return r},indexOf:function(r){return t[r]},contains:function(r){return void 0!==t[r]}};return e};return i}(t,r),o=0;o<r;o+=1)for(var i=0;i<t;i+=1)n.setPixel(i,o,e(i,o));var a=D();n.write(a);for(var u=function(){var t=0,r=0,e=0,n="",o={},i=function(t){n+=String.fromCharCode(a(63&t))},a=function(t){if(t<0);else{if(t<26)return 65+t;if(t<52)return t-26+97;if(t<62)return t-52+48;if(62==t)return 43;if(63==t)return 47}throw"n:"+t};return o.writeByte=function(n){for(t=t<<8|255&n,r+=8,e+=1;r>=6;)i(t>>>r-6),r-=6},o.flush=function(){if(r>0&&(i(t<<6-r),t=0,r=0),e%3!=0)for(var o=3-e%3,a=0;a<o;a+=1)n+="="},o.toString=function(){return n},o}(),f=a.toByteArray(),c=0;c<f.length;c+=1)u.writeByte(f[c]);return u.flush(),"data:image/gif;base64,"+u};return t}();qrcode.stringToBytesFuncs["UTF-8"]=function(t){return function(t){for(var r=[],e=0;e<t.length;e++){var n=t.charCodeAt(e);n<128?r.push(n):n<2048?r.push(192|n>>6,128|63&n):n<55296||n>=57344?r.push(224|n>>12,128|n>>6&63,128|63&n):(e++,n=65536+((1023&n)<<10|1023&t.charCodeAt(e)),r.push(240|n>>18,128|n>>12&63,128|n>>6&63,128|63&n))}return r}(t)},function(t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports&&(module.exports=t())}(function(){return qrcode});
+
+/* ================= SITE CONFIG ================= */
+var DEFAULT_CFG=JSON.parse(document.getElementById('siteConfig').textContent);
+var CFG=JSON.parse(JSON.stringify(DEFAULT_CFG)),CFG_FROM_PREVIEW=false;
+try{var _o=localStorage.getItem('rw_cfg');if(_o){CFG=JSON.parse(_o);CFG_FROM_PREVIEW=true}}catch(e){}
+function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function getPath(o,path){return path.split('.').reduce(function(a,k){return a==null?a:a[k]},o)}
+function inr(n){return '₹'+Number(n).toLocaleString('en-IN')}
+function waLink(msg){return 'https://wa.me/'+CFG.whatsapp+(msg?'?text='+encodeURIComponent(msg):'')}
+function waDisplay(){var n=String(CFG.whatsapp);if(n.length===12&&n.indexOf('91')===0){return '+91 '+n.slice(2,7)+' '+n.slice(7)}return '+'+n}
+function renderConfig(){
+  document.querySelectorAll('[data-cfg]').forEach(function(el){var k=el.dataset.cfg;var v=k==='whatsappDisplay'?waDisplay():getPath(CFG,k);if(v!=null)el.textContent=v});
+  document.querySelectorAll('[data-cfg-href]').forEach(function(el){el.href=getPath(CFG,el.dataset.cfgHref)||'#'});
+  document.querySelectorAll('[data-mail]').forEach(function(el){var v=CFG[el.dataset.mail]||'';el.textContent=v;el.href='mailto:'+v});
+  document.querySelectorAll('[data-wa]').forEach(function(el){var m=el.dataset.wa;try{m=decodeURIComponent(m)}catch(e){}el.href=waLink(m)});
+  // hero stats
+  var hs=document.getElementById('heroStats');if(hs)hs.innerHTML=(CFG.hero.stats||[]).map(function(x){return '<div><strong>'+esc(x[0])+'</strong>'+esc(x[1])+'</div>'}).join('');
+  // plans
+  var pl=document.getElementById('plans');
+  pl.innerHTML=CFG.plans.map(function(p){
+    var d=Number(CFG.onlineDiscount)||0;
+    return '<div class="plan'+(p.popular?' pop':'')+'">'+(p.popular?'<span class="tag">Most chosen</span>':'')+
+      '<h3>'+esc(p.name)+'</h3><p class="for">'+esc(p.for)+'</p>'+
+      '<div class="price"><span class="now">'+inr(p.price)+'</span>'+(p.old?'<s>'+inr(p.old)+'</s>':'')+'</div>'+
+      (p.save?'<span class="save">'+esc(p.save)+'</span>':'')+
+      '<ul>'+(p.features||[]).map(function(f){return '<li>'+esc(f)+'</li>'}).join('')+'</ul>'+
+      '<button class="btn '+(p.popular?'btn-light':'btn-grad')+'" type="button" data-plan="'+esc(p.id)+'">'+esc(p.cta||'Order now')+'</button>'+
+      (d>0?'<p class="order-note">Pay online and get an extra '+d+'% off</p>':'')+'</div>';
+  }).join('');
+  // faq
+  var fq=document.getElementById('faqList');
+  fq.innerHTML=(CFG.faq||[]).map(function(q,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'}).join('');
+  // reviews
+  var R=CFG.reviews||{},sec=document.getElementById('reviews');
+  var items=R.items||[],shots=R.shots||[],voice=R.voice||'';
+  var show=!!R.show&&(items.length||shots.length||voice);
+  sec.hidden=!show;
+  document.getElementById('reviewList').innerHTML=items.map(function(r){return '<div class="review"><p>"'+esc(r[2])+'"</p><div class="who"><div class="avatar">'+esc(String(r[0]).trim().charAt(0).toUpperCase())+'</div><div><strong>'+esc(r[0])+'</strong><small>'+esc(r[1])+'</small></div></div></div>'}).join('');
+  document.getElementById('shots').innerHTML=shots.map(function(u){return '<div class="shot"><img src="'+esc(u)+'" alt="Client review on WhatsApp" loading="lazy"></div>'}).join('');
+  document.getElementById('proofs').hidden=!(shots.length||voice);
+  document.getElementById('shots').hidden=!shots.length;
+  document.getElementById('voiceBox').hidden=!voice;
+  document.getElementById('vaudio').setAttribute('src',voice);
+  // payment texts
+  var d=Number(CFG.onlineDiscount)||0;
+  var off=document.querySelector('#payOnline .off');if(off){off.textContent='Extra '+d+'% OFF';off.hidden=!d}
+  var nav=document.querySelector('.nav ul a[href="#samples"]');
+}
+renderConfig();
+
+var SAMPLES=[
+ {tag:"Fresher",tpl:"classic",t:"B.Tech Computer Science Graduate",acc:"#1f2937",n:"Aarav Mehta",c:["+91 90000 00001","aarav.mehta@email.com","linkedin.com/in/aaravmehta","github.com/aaravmehta"],
+  s:"Computer Science graduate with hands-on experience building full-stack web applications. Built and deployed three apps used by 400+ students during college.",
+  ed:[["Savitribai Phule Pune University","Pune, Maharashtra","B.Tech in Computer Science, CGPA 8.4/10","Aug 2021 – May 2025"]],
+  ex:[["Web Development Intern","Jan 2025 – Jun 2025","Brightcode Labs","Pune, Maharashtra",["Built 6 reusable React components used across the company's client dashboard","Fixed 40+ UI bugs and improved page load time by 25% using code splitting","Wrote unit tests with Jest, raising coverage from 48% to 80%"]]],
+  pr:[["Campus Connect","React, Node.js, MongoDB","Aug 2024 – Dec 2024",["Event management app with 400+ active student users and real-time notifications","Designed REST APIs and role-based login for students and organisers"]],["Expense Tracker","Python, Flask, SQLite","Mar 2024 – May 2024",["Personal finance app with monthly spending charts and CSV export"]]],
+  sk:[["Languages","JavaScript, Python, Java, SQL, HTML/CSS"],["Frameworks","React, Node.js, Express, Flask"],["Tools","Git, GitHub, VS Code, Postman, Docker (basic)"]]},
+ {tag:"Software Engineer",tpl:"modern",t:"Software Engineer, Backend",acc:"#1d4ed8",n:"Priya Nair",c:["+91 90000 00002","priya.nair@email.com","linkedin.com/in/priyanair","Bengaluru, Karnataka"],
+  s:"Backend engineer with 4 years of experience building high-traffic APIs in Java and Go. Focused on performance, reliability and clean system design.",
+  ex:[["Software Engineer II","Jul 2023 – Present","Finstack Technologies","Bengaluru, Karnataka",["Redesigned the payments API to handle 3x peak traffic with 99.95% uptime","Cut average response time from 420 ms to 150 ms with caching and query tuning","Mentored 3 junior engineers through code reviews and pair programming"]],["Software Engineer","Jun 2021 – Jun 2023","Cloudnest Systems","Chennai, Tamil Nadu",["Built microservices for order management used by 50+ merchant clients","Migrated 12 services to Kubernetes, reducing deployment time by 60%"]]],
+  pr:[["Rate Limiter Library","Go, Redis","2024",["Open-source token-bucket rate limiter used in 4 internal services"]]],
+  ed:[["Anna University","Chennai, Tamil Nadu","B.E. in Information Technology","2017 – 2021"]],
+  sk:[["Languages","Java, Go, Python, SQL"],["Technologies","Spring Boot, PostgreSQL, Redis, Kafka, gRPC"],["Cloud & DevOps","AWS, Docker, Kubernetes, GitHub Actions"]]},
+ {tag:"Data Analyst",tpl:"minimal",t:"Data Analyst",acc:"#0f766e",n:"Rohit Verma",c:["+91 90000 00003","rohit.verma@email.com","linkedin.com/in/rohitverma","Gurugram, Haryana"],
+  s:"Data Analyst with 3 years of experience turning sales and customer data into dashboards and decisions for business teams.",
+  ex:[["Data Analyst","Mar 2022 – Present","RetailKart India","Gurugram, Haryana",["Built Power BI dashboards tracking ₹120 Cr in monthly sales across 14 regions","Automated weekly reports with Python and SQL, saving 6 hours per week","Identified pricing gaps that lifted margin on 200 products by 4%"]],["Business Analyst Intern","Jun 2021 – Feb 2022","QuickServe Foods","New Delhi",["Analysed 2 lakh+ delivery records to cut average delivery delay by 11%"]]],
+  pr:[["Customer Churn Model","Python, scikit-learn","2023",["Logistic regression model with 84% accuracy, used to target retention offers"]]],
+  ed:[["University of Delhi","New Delhi","B.Sc. (Hons.) Statistics","2018 – 2021"],["Google","Online","Google Data Analytics Professional Certificate","2022"]],
+  sk:[["Analytics","SQL, Python (Pandas, NumPy), Excel (Advanced), Statistics"],["Visualisation","Power BI, Tableau, Google Looker Studio"],["Tools","BigQuery, Git, Jupyter"]]},
+ {tag:"Sales",tpl:"executive",t:"Senior Sales Executive, B2B",acc:"#1e3a5f",n:"Karan Singh",c:["+91 90000 00004","karan.singh@email.com","linkedin.com/in/karansingh","Jaipur, Rajasthan"],
+  s:"B2B sales professional with 6 years in SaaS and industrial supplies. Consistent quota achiever with a strong network across Rajasthan and Gujarat.",
+  ex:[["Senior Sales Executive","Apr 2021 – Present","Axion Industrial Supplies","Jaipur, Rajasthan",["Achieved 118% of annual target in FY24, the highest in the western region","Opened 35 new corporate accounts worth ₹2.4 Cr in yearly revenue","Reduced sales cycle from 60 to 42 days with a structured follow-up process"]],["Sales Executive","Jul 2018 – Mar 2021","Nexa Software","Ahmedabad, Gujarat",["Closed ₹80 L in SaaS subscriptions from SME clients","Ran 120+ product demos with a 32% demo-to-close rate"]]],
+  ed:[["University of Rajasthan","Jaipur, Rajasthan","MBA, Marketing","2016 – 2018"],["Rajasthan University","Jaipur, Rajasthan","B.Com","2013 – 2016"]],
+  sk:[["Sales","Key account management, Negotiation, Lead generation, Pipeline forecasting"],["Tools","Salesforce, Zoho CRM, LinkedIn Sales Navigator, MS Excel"],["Languages","English, Hindi, Gujarati"]]},
+ {tag:"HR",tpl:"compact",t:"HR Business Partner",acc:"#9d174d",n:"Sneha Kulkarni",c:["+91 90000 00005","sneha.k@email.com","linkedin.com/in/snehakulkarni","Mumbai, Maharashtra"],
+  s:"HR professional with 7 years across recruitment, employee relations and HR operations for teams of 300+ employees.",
+  ex:[["HR Business Partner","Jan 2022 – Present","Medisure Healthcare","Mumbai, Maharashtra",["Hired 140+ employees in one year while cutting average time-to-hire by 30%","Launched an onboarding program that reduced 90-day attrition from 18% to 9%","Handled 25+ employee relations cases with full policy compliance"]],["HR Executive","Aug 2017 – Dec 2021","Trident Logistics","Pune, Maharashtra",["Managed end-to-end payroll and HRMS records for 300 employees","Ran quarterly engagement surveys and raised participation to 88%"]]],
+  ed:[["Symbiosis Institute of Management Studies","Pune, Maharashtra","MBA, Human Resources","2015 – 2017"]],
+  sk:[["HR Functions","Talent acquisition, Employee engagement, Performance management, Payroll"],["Tools","Darwinbox, Keka, Naukri RMS, MS Excel"],["Certifications","SHRM-CP (2023)"]]},
+ {tag:"Marketing",tpl:"modern",t:"Digital Marketing Manager",acc:"#7c3aed",n:"Ishita Roy",c:["+91 90000 00006","ishita.roy@email.com","linkedin.com/in/ishitaroy","Kolkata, West Bengal"],
+  s:"Performance marketer with 5 years running paid, SEO and social campaigns for D2C brands.",
+  ex:[["Digital Marketing Manager","Feb 2022 – Present","Glowveda Naturals","Kolkata, West Bengal",["Scaled monthly online revenue from ₹18 L to ₹55 L in 14 months","Brought cost per acquisition down by 35% across Meta and Google Ads","Grew organic traffic 3x through an SEO content plan of 120+ articles"]],["Digital Marketing Executive","Jun 2019 – Jan 2022","Pixelwave Agency","Kolkata, West Bengal",["Managed ₹40 L in annual ad spend across 9 client accounts"]]],
+  pr:[["Festive Sale Campaign","Meta Ads, Google Ads, Email","Oct 2023",["Generated ₹1.1 Cr in 10 days at 5.8x return on ad spend"]]],
+  ed:[["St. Xavier's College","Kolkata, West Bengal","BBA, Marketing","2016 – 2019"]],
+  sk:[["Channels","Google Ads, Meta Ads, SEO, Email marketing, Influencer marketing"],["Tools","GA4, Google Tag Manager, SEMrush, Shopify, Klaviyo"],["Certifications","Google Ads Search, Meta Certified Media Buyer"]]},
+ {tag:"Finance",tpl:"classic",t:"Chartered Accountant",acc:"#1f2937",n:"Amit Joshi",c:["+91 90000 00007","amit.joshi@email.com","linkedin.com/in/amitjoshi","Ahmedabad, Gujarat"],
+  s:"Chartered Accountant with 5 years in statutory audit, taxation and financial reporting for manufacturing businesses.",
+  ex:[["Finance Manager","Apr 2022 – Present","Shree Polymers Ltd.","Ahmedabad, Gujarat",["Led monthly close for a ₹300 Cr business, cutting close time from 10 to 6 days","Managed GST and TDS compliance with zero penalties for two consecutive years","Set up cost tracking that identified ₹1.2 Cr in yearly savings"]],["Audit Associate","Oct 2019 – Mar 2022","M/s Desai & Associates","Ahmedabad, Gujarat",["Executed statutory audits for 15 clients with combined turnover of ₹900 Cr"]]],
+  ed:[["The Institute of Chartered Accountants of India","New Delhi","Chartered Accountant","2019"],["Gujarat University","Ahmedabad, Gujarat","B.Com","2013 – 2016"]],
+  sk:[["Finance","Financial reporting, Budgeting, Statutory audit, Direct & indirect tax"],["Tools","SAP FICO, Tally Prime, Advanced Excel, Power BI"],["Standards","Ind AS, GST, Companies Act"]]},
+ {tag:"Operations",tpl:"executive",t:"Operations Manager, Logistics",acc:"#0b3d3a",n:"Mohammed Faiz",c:["+91 90000 00008","m.faiz@email.com","linkedin.com/in/mohammedfaiz","Hyderabad, Telangana"],
+  s:"Operations leader with 10 years in warehousing and last-mile delivery, managing teams of up to 150 people.",
+  ex:[["Operations Manager","May 2019 – Present","SwiftMove Logistics","Hyderabad, Telangana",["Ran 4 warehouses shipping 25,000 orders a day at 98.7% on-time delivery","Reduced delivery cost per order by 18% through route planning","Trained 12 team leads, 5 of whom were promoted to supervisors"]],["Assistant Manager, Warehouse","Jul 2014 – Apr 2019","Bharat Retail Distribution","Hyderabad, Telangana",["Improved inventory accuracy from 91% to 99.2% with cycle counting"]]],
+  ed:[["Osmania University","Hyderabad, Telangana","MBA, Operations Management","2012 – 2014"]],
+  sk:[["Operations","Warehouse management, Last-mile delivery, Lean, Vendor management"],["Tools","SAP WM, Oracle WMS, MS Excel, Power BI"],["Certifications","Six Sigma Green Belt"]]}
+];
+var TPL_NAME={classic:'Classic',modern:'Modern',minimal:'Minimal',executive:'Executive',compact:'Compact'};
+function cvHTML(r){
+  var tpl=r.tpl||'classic',fresher=r.tag==='Fresher';
+  function row(a,b){return '<div class="row"><span><b>'+esc(a)+'</b></span><span>'+esc(b)+'</span></div>'}
+  function sub(a,b){return '<div class="row sub"><i>'+esc(a)+'</i><i>'+esc(b)+'</i></div>'}
+  function ul(arr){return '<ul>'+arr.map(function(b){return '<li>'+esc(b)+'</li>'}).join('')+'</ul>'}
+  var edu='<div class="cs">Education</div>'+r.ed.map(function(e){return row(e[0],e[1])+sub(e[2],e[3])}).join('');
+  var exp='<div class="cs">Experience</div>'+r.ex.map(function(e){return row(e[0],e[1])+sub(e[2],e[3])+ul(e[4])}).join('');
+  var pr=r.pr?'<div class="cs">Projects</div>'+r.pr.map(function(p){return '<div class="row"><span><b>'+esc(p[0])+'</b> <span class="sep">|</span> <i>'+esc(p[1])+'</i></span><span>'+esc(p[2])+'</span></div>'+ul(p[3])}).join(''):'';
+  var skTitle=tpl==='classic'?'Technical Skills':(tpl==='executive'?'Core Competencies':'Skills');
+  var sk='<div class="cs">'+skTitle+'</div>'+(tpl==='compact'
+      ?r.sk.map(function(x){return '<div class="sk"><b>'+esc(x[0])+'</b>'+x[1].split(',').map(function(v){return '<span class="skp">'+esc(v.trim())+'</span>'}).join('')+'</div>'}).join('')
+      :r.sk.map(function(x){return '<div class="sk"><b>'+esc(x[0])+':</b> '+esc(x[1])+'</div>'}).join(''));
+  var sum=r.s?'<div class="cs">'+(tpl==='executive'?'Professional Profile':'Summary')+'</div><p>'+esc(r.s)+'</p>':'';
+  var contactInline=r.c.map(esc).join(' <span class="sep">|</span> ');
+  var body=fresher?(sum+edu+exp+pr+sk):(sum+exp+pr+edu+sk);
+  var head;
+  if(tpl==='modern'){head='<div class="hd"><div><div class="cn">'+esc(r.n)+'</div><div class="role">'+esc(r.t)+'</div></div><div class="ct">'+r.c.map(function(c){return '<span class="c">'+esc(c)+'</span>'}).join('')+'</div></div>'}
+  else if(tpl==='executive'){return '<div class="cv t-executive" style="--acc:'+r.acc+'"><div class="band"><div class="cn">'+esc(r.n)+'</div><div class="role">'+esc(r.t)+'</div><div class="ct">'+contactInline+'</div></div><div class="body">'+body+'</div></div>'}
+  else if(tpl==='minimal'||tpl==='compact'){head='<div class="cn">'+esc(r.n)+'</div><div class="role">'+esc(r.t)+'</div><div class="ct">'+contactInline+'</div>'}
+  else{head='<div class="cn">'+esc(r.n)+'</div><div class="ct">'+contactInline+'</div>'}
+  return '<div class="cv t-'+tpl+'" style="--acc:'+(r.acc||'#4B0FD6')+'">'+head+body+'</div>';
+}
+function card(i){var r=SAMPLES[i];return '<div class="sample" role="button" tabindex="0" data-i="'+i+'" aria-label="Open sample resume: '+r.tag+'"><div class="mini">'+cvHTML(r)+'</div><span class="lbl">'+r.tag+' · '+(TPL_NAME[r.tpl]||'')+' template</span></div>'}
+var idx=SAMPLES.map(function(_,i){return i});
+var a1=idx.map(card).join(''), a2=idx.slice().reverse().map(card).join('');
+document.getElementById('track1').innerHTML=a1+a1;
+document.getElementById('track2').innerHTML=a2+a2;
+document.querySelectorAll('.stage .mini').forEach(function(m){m.innerHTML=cvHTML(SAMPLES[+m.dataset.cv])});
+
+var modal=document.getElementById('modal'),mbody=document.getElementById('mbody'),lastFocus;
+function openCV(i){lastFocus=document.activeElement;mbody.innerHTML=cvHTML(SAMPLES[i]);modal.classList.add('open');document.body.style.overflow='hidden';document.getElementById('mx').focus();}
+function closeCV(){modal.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+document.querySelectorAll('.sample').forEach(function(el){
+  el.addEventListener('click',function(){openCV(+el.dataset.i)});
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openCV(+el.dataset.i)}});
+});
+document.getElementById('mx').onclick=closeCV;
+document.getElementById('mgo').onclick=function(){closeCV()};
+modal.addEventListener('click',function(e){if(e.target===modal)closeCV()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeCV()});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.scrollY>40)},{passive:true});
+
+(function(){
+  var stage=document.getElementById('stage'),ring=document.getElementById('ring'),num=document.getElementById('scoreNum'),target=94;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){stage.classList.add('go');ring.style.setProperty('--p',target);num.textContent=target;return;}
+  setTimeout(function(){stage.classList.add('go')},250);
+  setTimeout(function(){var v=0,t=setInterval(function(){v+=2;if(v>=target){v=target;clearInterval(t);}ring.style.setProperty('--p',v);num.textContent=v;},22)},1100);
+})();
+
+(function(){
+  var a=document.getElementById('vaudio'),b=document.getElementById('vbtn'),p=document.getElementById('vprog');
+  b.onclick=function(){ if(!a.getAttribute('src')){document.getElementById('vcap').textContent='Audio file abhi add nahi hui hai.';return;}
+    if(a.paused){a.play();b.textContent='❚❚';}else{a.pause();b.textContent='▶';} };
+  a.ontimeupdate=function(){ if(a.duration) p.style.width=(a.currentTime/a.duration*100)+'%'; };
+  a.onended=function(){b.textContent='▶';p.style.width='0';};
+})();
+
+/* ---------- Footer wordmark: fit to width on every screen ---------- */
+(function(){
+  var wm=document.querySelector('footer .wordmark');if(!wm)return;
+  function fit(){
+    var box=wm.clientWidth;if(!box)return;
+    wm.style.fontSize='100px';
+    var w=wm.scrollWidth;if(!w)return;
+    var fs=Math.floor(100*box/w*0.985);
+    wm.style.fontSize=Math.max(24,fs)+'px';
+  }
+  fit();window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}
+  setTimeout(fit,600);
+})();
+
+/* ---------- Legal pages ---------- */
+(function(){
+  var legal=document.getElementById('legal');
+  var docs=['terms','privacy','refund','disclaimer','charges'];
+  function show(name){
+    if(docs.indexOf(name)<0)return false;
+    docs.forEach(function(d){document.getElementById('doc-'+d).classList.toggle('on',d===name)});
+    legal.querySelectorAll('.legal-nav a').forEach(function(a){a.classList.toggle('on',a.dataset.doc===name)});
+    legal.classList.add('open');document.body.style.overflow='hidden';legal.scrollTop=0;
+    var pay=document.getElementById('pay');if(pay)pay.classList.remove('open');
+    return true;
+  }
+  function hide(){legal.classList.remove('open');document.body.style.overflow='';
+    if(location.hash.indexOf('#legal-')===0){history.replaceState(null,'',location.pathname+location.search)}}
+  function route(){var h=location.hash;if(h.indexOf('#legal-')===0){show(h.slice(7))}else if(legal.classList.contains('open')){hide()}}
+  window.addEventListener('hashchange',route);route();
+  document.getElementById('legalClose').onclick=function(){hide()};
+  document.getElementById('legalHome').onclick=function(e){e.preventDefault();hide();window.scrollTo(0,0)};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&legal.classList.contains('open'))hide()});
+})();
+
+/* ---------- Payment (UPI QR) ---------- */
+(function(){
+  var UPI_ID=CFG.upiId,UPI_NAME=CFG.upiName||'Resumewallah',WA=CFG.whatsapp,DISC=Number(CFG.onlineDiscount)||0;
+  var PLANS={};CFG.plans.forEach(function(p){PLANS[p.id]={name:p.name,price:Number(p.price)}});
+  var pay=document.getElementById('pay'),s1=document.getElementById('payStep1'),s2=document.getElementById('payStep2');
+  var cur=null,timer=null,doneTimer=null,qr=null,lastFocus;
+  function open(key){
+    cur=PLANS[key];if(!cur)return;lastFocus=document.activeElement;
+    document.getElementById('p1name').textContent=cur.name;
+    document.getElementById('p1price').textContent=inr(cur.price);
+    document.getElementById('payWA').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Resumewallah, I want to order the '+cur.name+' ('+inr(cur.price)+').');
+    s1.hidden=false;s2.hidden=true;
+    pay.classList.add('open');document.body.style.overflow='hidden';
+    document.getElementById('payX').focus();
+  }
+  function close(){pay.classList.remove('open');document.body.style.overflow='';clearInterval(timer);clearInterval(doneTimer);if(lastFocus)lastFocus.focus()}
+  function startOnline(){
+    var amt=Math.round(cur.price*(1-DISC/100));
+    document.getElementById('p2name').textContent=cur.name;
+    document.getElementById('p2old').textContent=inr(cur.price);
+    document.getElementById('p2new').textContent=inr(amt);document.getElementById('p2old').hidden=!DISC;document.getElementById('p2disc').textContent=DISC?DISC+'% online discount applied':'';
+    document.getElementById('upiIdText').textContent=UPI_ID;
+    var link='upi://pay?pa='+encodeURIComponent(UPI_ID)+'&pn='+encodeURIComponent(UPI_NAME)+'&am='+amt+'&cu=INR&tn='+encodeURIComponent(cur.name+' Resumewallah');
+    document.getElementById('upiOpen').href=link;
+    var box=document.getElementById('qrbox');box.innerHTML='';
+    try{var q=qrcode(0,'M');q.addData(link);q.make();
+      var img=document.createElement('img');img.alt='UPI QR code';img.src=q.createDataURL(6,0);box.appendChild(img);}
+    catch(err){box.innerHTML='<span style="font-size:.85rem;color:#666;text-align:center;padding:10px">QR nahi ban paya. UPI ID copy karke pay karein.</span>'}
+    s1.hidden=true;s2.hidden=false;
+    // 10-minute timer
+    var left=600,t=document.getElementById('payTimer');t.textContent='10:00';
+    var exp=document.getElementById('payExpired');if(exp)exp.remove();
+    clearInterval(timer);timer=setInterval(function(){left--;
+      t.textContent=Math.floor(left/60)+':'+('0'+left%60).slice(-2);
+      if(left<=0){clearInterval(timer);box.innerHTML='';
+        var e=document.createElement('p');e.className='expired';e.id='payExpired';e.innerHTML='Time over. <button type="button" class="ghost" id="payRetry">Generate new QR</button>';
+        box.appendChild(e);document.getElementById('payRetry').onclick=startOnline}
+    },1000);
+    // 30-second wait before "Payment done"
+    var db=document.getElementById('payDone'),w=30;db.disabled=true;db.textContent='Payment done (wait 30s)';
+    clearInterval(doneTimer);doneTimer=setInterval(function(){w--;db.textContent='Payment done (wait '+w+'s)';if(w<=0){clearInterval(doneTimer);db.disabled=false;db.textContent='Payment done, send screenshot on WhatsApp'}},1000);
+    db.onclick=function(){if(db.disabled)return;
+      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('Hi Resumewallah, I have paid '+inr(amt)+' via UPI for the '+cur.name+'. Sharing the payment screenshot. Please start my resume.'),'_blank');
+    };
+  }
+  document.querySelectorAll('[data-plan]').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.plan)})});
+  document.getElementById('payX').onclick=close;
+  pay.addEventListener('click',function(e){if(e.target===pay)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&pay.classList.contains('open'))close()});
+  document.getElementById('payOnline').onclick=startOnline;
+  document.getElementById('upiCopy').onclick=function(){
+    var b=this;function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}
+    if(navigator.clipboard){navigator.clipboard.writeText(UPI_ID).then(ok,function(){prompt('UPI ID',UPI_ID)})}else{prompt('UPI ID',UPI_ID)}
+  };
+  document.getElementById('qrSave').onclick=function(){
+    var c=document.querySelector('#qrbox canvas'),img=document.querySelector('#qrbox img');
+    var url=c?c.toDataURL('image/png'):(img?img.src:'');if(!url)return;
+    var a=document.createElement('a');a.href=url;a.download='resumewallah-upi-qr.png';document.body.appendChild(a);a.click();a.remove();
+  };
+  // #order links open the Pro plan chooser
+  document.querySelectorAll('a[href="#order"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open('pro')})});
+})();
+
+/* ================= ADMIN PANEL ================= */
+(function(){
+  var admin=document.getElementById('admin'),login=document.getElementById('adLogin'),panel=document.getElementById('adPanel'),acts=document.getElementById('adminActs');
+  var W=JSON.parse(JSON.stringify(CFG)); // working copy
+  function $(id){return document.getElementById(id)}
+  function toast(m){var t=$('adToast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on')},2200)}
+  function openAdmin(){admin.classList.add('open');document.body.style.overflow='hidden';
+    var pay=document.getElementById('pay');if(pay)pay.classList.remove('open');
+    var lg=document.getElementById('legal');if(lg)lg.classList.remove('open');
+    if(!panel.hidden)fill();else $('adPass').focus()}
+  function closeAdmin(){admin.classList.remove('open');document.body.style.overflow='';if(location.hash==='#admin')history.replaceState(null,'',location.pathname+location.search)}
+  function route(){if(location.hash==='#admin')openAdmin();else if(admin.classList.contains('open'))closeAdmin()}
+  window.addEventListener('hashchange',route);route();
+  $('adClose').onclick=closeAdmin;$('adClose2').onclick=closeAdmin;
+  $('adminHome').onclick=function(e){e.preventDefault();closeAdmin();window.scrollTo(0,0)};
+  $('adGo').onclick=function(){
+    if($('adPass').value===String(DEFAULT_CFG.adminPassword)){login.hidden=true;panel.hidden=false;acts.hidden=false;$('adClose2').hidden=true;fill()}
+    else{$('adErr').textContent='Galat password.'}
+  };
+  $('adPass').addEventListener('keydown',function(e){if(e.key==='Enter')$('adGo').click()});
+
+  var simple=['whatsapp','instagram','supportEmail','legalEmail','upiId','upiName','onlineDiscount','adminPassword'];
+  function fill(){
+    simple.forEach(function(k){$('f_'+k).value=W[k]==null?'':W[k]});
+    $('f_hero_pill').value=W.hero.pill;$('f_hero_title').value=W.hero.title;$('f_hero_lead').value=W.hero.lead;
+    $('f_hero_stats').value=(W.hero.stats||[]).map(function(x){return x[0]+' | '+x[1]}).join('\n');
+    $('f_pricing_title').value=W.pricing.title;$('f_pricing_sub').value=W.pricing.sub;
+    $('planEdits').innerHTML=W.plans.map(function(p,i){return '<div class="plan-edit"><h4 style="margin:.6rem 0 0">Plan '+(i+1)+'</h4><div class="g3">'+
+      '<label>Name<input data-pk="name" data-pi="'+i+'" value="'+esc(p.name)+'"></label>'+
+      '<label>Price (₹)<input type="number" data-pk="price" data-pi="'+i+'" value="'+esc(p.price)+'"></label>'+
+      '<label>Old price (₹) <small>Khaali = strike price nahi</small><input type="number" data-pk="old" data-pi="'+i+'" value="'+esc(p.old||'')+'"></label></div>'+
+      '<div class="g2"><label>Short description<input data-pk="for" data-pi="'+i+'" value="'+esc(p.for)+'"></label>'+
+      '<label>Save text<input data-pk="save" data-pi="'+i+'" value="'+esc(p.save||'')+'"></label>'+
+      '<label>Button text<input data-pk="cta" data-pi="'+i+'" value="'+esc(p.cta)+'"></label>'+
+      '<label class="chk" style="margin-top:2.2rem"><input type="checkbox" data-pk="popular" data-pi="'+i+'"'+(p.popular?' checked':'')+'> Highlight as "Most chosen"</label></div>'+
+      '<label>Features <small>Ek line mein ek</small><textarea data-pk="features" data-pi="'+i+'">'+esc((p.features||[]).join('\n'))+'</textarea></label></div>'}).join('');
+    $('f_reviews_show').checked=!!W.reviews.show;$('f_reviews_title').value=W.reviews.title||'What clients say';
+    $('f_reviews_items').value=(W.reviews.items||[]).map(function(r){return r.join(' | ')}).join('\n');
+    $('f_reviews_shots').value=(W.reviews.shots||[]).join('\n');$('f_reviews_voice').value=W.reviews.voice||'';
+    $('f_faq').value=(W.faq||[]).map(function(q){return q[0]+'\n'+q[1]}).join('\n\n');
+    $('f_band_title').value=W.band.title;$('f_band_text').value=W.band.text;$('f_band_cta').value=W.band.cta;
+    $('f_json').value=JSON.stringify(W,null,1);
+  }
+  function lines(v){return v.split('\n').map(function(x){return x.trim()}).filter(Boolean)}
+  function collect(){
+    simple.forEach(function(k){W[k]=$('f_'+k).value.trim()});
+    W.whatsapp=W.whatsapp.replace(/[^0-9]/g,'');W.onlineDiscount=Number(W.onlineDiscount)||0;
+    W.hero={pill:$('f_hero_pill').value,title:$('f_hero_title').value,lead:$('f_hero_lead').value,
+      stats:lines($('f_hero_stats').value).map(function(l){var a=l.split('|');return [a[0].trim(),(a[1]||'').trim()]})};
+    W.pricing={title:$('f_pricing_title').value,sub:$('f_pricing_sub').value};
+    document.querySelectorAll('#planEdits [data-pk]').forEach(function(el){var p=W.plans[+el.dataset.pi],k=el.dataset.pk;
+      if(k==='popular')p[k]=el.checked;else if(k==='features')p[k]=lines(el.value);else if(k==='price'||k==='old')p[k]=el.value===''?null:Number(el.value);else p[k]=el.value});
+    W.reviews={show:$('f_reviews_show').checked,title:$('f_reviews_title').value,
+      items:lines($('f_reviews_items').value).map(function(l){var a=l.split('|').map(function(x){return x.trim()});return [a[0]||'',a[1]||'',a.slice(2).join(' | ')]}),
+      shots:lines($('f_reviews_shots').value),voice:$('f_reviews_voice').value.trim()};
+    W.faq=$('f_faq').value.split(/\n\s*\n/).map(function(b){var l=b.split('\n').map(function(x){return x.trim()}).filter(Boolean);return l.length?[l[0],l.slice(1).join(' ')]:null}).filter(Boolean);
+    W.band={title:$('f_band_title').value,text:$('f_band_text').value,cta:$('f_band_cta').value};
+    $('f_json').value=JSON.stringify(W,null,1);
+    return W;
+  }
+  $('adPreview').onclick=function(){collect();try{localStorage.setItem('rw_cfg',JSON.stringify(W));toast('Preview saved. Page reload ho raha hai…');setTimeout(function(){location.hash='';location.reload()},700)}catch(e){toast('Browser storage band hai')}};
+  $('adReset').onclick=function(){try{localStorage.removeItem('rw_cfg')}catch(e){}toast('Reset. Reload…');setTimeout(function(){location.hash='';location.reload()},600)};
+  $('adCopyJson').onclick=function(){collect();var v=$('f_json').value;if(navigator.clipboard){navigator.clipboard.writeText(v).then(function(){toast('JSON copied')})}else{$('f_json').select();document.execCommand('copy');toast('JSON copied')}};
+  $('adDownload').onclick=function(){
+    collect();var json=JSON.stringify(W,null,1);
+    function build(src){var a=src.indexOf('<script id="siteConfig"');var b=src.indexOf('</'+'script>',a);if(a<0||b<0)throw new Error('config block not found');
+      var open=src.indexOf('>',a)+1;return src.slice(0,open)+'\n'+json+'\n'+src.slice(b)}
+    function dl(html){var blob=new Blob([html],{type:'text/html'});var u=URL.createObjectURL(blob);var l=document.createElement('a');l.href=u;l.download='index.html';document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000);
+      try{localStorage.setItem('rw_cfg',json)}catch(e){}toast('index.html download ho gaya. Ise hosting pe upload karo.')}
+    fetch(location.href.split('#')[0],{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('http');return r.text()}).then(function(src){dl(build(src))})
+      .catch(function(){toast('Download yahan kaam nahi kar raha. Neeche JSON copy karke file mein paste karo.');$('f_json').scrollIntoView({behavior:'smooth'})});
+  };
+})();
+</script>
+</body>
+</html>
