@@ -1453,25 +1453,56 @@ window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.
   });
 })();
 
-/* ---------- Legal pages ---------- */
+/* ---------- Legal pages (URL mein # nahi aata) ---------- */
+var CLEAN_URL=location.pathname+location.search;
 (function(){
   var legal=document.getElementById('legal');
   var docs=['terms','privacy','refund','disclaimer','charges'];
+  function isOpen(){return legal.classList.contains('open')}
   function show(name){
     if(docs.indexOf(name)<0)return false;
+    // Pehli baar khule to history entry banao (bina #), taaki phone ka Back button page band kare
+    if(!isOpen()){try{history.pushState({legal:1},'',CLEAN_URL)}catch(e){}}
     docs.forEach(function(d){document.getElementById('doc-'+d).classList.toggle('on',d===name)});
     legal.querySelectorAll('.legal-nav a').forEach(function(a){a.classList.toggle('on',a.dataset.doc===name)});
     legal.classList.add('open');document.body.style.overflow='hidden';legal.scrollTop=0;
     var pay=document.getElementById('pay');if(pay)pay.classList.remove('open');
     return true;
   }
-  function hide(){legal.classList.remove('open');document.body.style.overflow='';
-    if(location.hash.indexOf('#legal-')===0){history.replaceState(null,'',location.pathname+location.search)}}
-  function route(){var h=location.hash;if(h.indexOf('#legal-')===0){show(h.slice(7))}else if(legal.classList.contains('open')){hide()}}
-  window.addEventListener('hashchange',route);route();
+  function closeUI(){legal.classList.remove('open');document.body.style.overflow=''}
+  function hide(){if(!isOpen())return;if(history.state&&history.state.legal){history.back()}else{closeUI()}}
+  window.addEventListener('popstate',function(){if(isOpen()&&!(history.state&&history.state.legal))closeUI()});
+  // Purane links (jaise site.in/#legal-terms) bhi chalenge, phir URL saaf ho jaayega
+  function fromHash(){var h=location.hash;if(h.indexOf('#legal-')===0){history.replaceState(null,'',CLEAN_URL);show(h.slice(7))}}
+  window.addEventListener('hashchange',fromHash);fromHash();
   document.getElementById('legalClose').onclick=function(){hide()};
   document.getElementById('legalHome').onclick=function(e){e.preventDefault();hide();window.scrollTo(0,0)};
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&legal.classList.contains('open'))hide()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen())hide()});
+  window.RWLegal={show:show,hide:hide};
+})();
+
+/* ---------- Saare andar ke links: smooth scroll, URL mein # nahi ---------- */
+(function(){
+  document.addEventListener('click',function(e){
+    if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+    var h=a.getAttribute('href');
+    if(h==='#admin')return;
+    e.preventDefault();
+    if(h.indexOf('#legal-')===0){window.RWLegal.show(h.slice(7));return}
+    if(h==='#'){window.scrollTo({top:0,behavior:'smooth'});return}
+    var t=document.getElementById(h.slice(1));if(!t)return;
+    if(document.getElementById('legal').classList.contains('open'))window.RWLegal.hide();
+    setTimeout(function(){t.scrollIntoView({behavior:'smooth',block:'start'})},30);
+  });
+  // Kisi ne purana link (site.in/#pricing) khola ho to section pe jao, phir URL se # hatao
+  function cleanHash(){
+    var h=location.hash;
+    if(h==='#admin'||h.indexOf('#legal-')===0)return;
+    if(h&&h!=='#'){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView({block:'start'})}
+    if(h||location.href.slice(-1)==='#')history.replaceState(null,'',CLEAN_URL);
+  }
+  cleanHash();window.addEventListener('hashchange',cleanHash);
 })();
 
 /* ---------- Payment (UPI QR) ---------- */
@@ -1597,8 +1628,8 @@ window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.
     $('f_json').value=JSON.stringify(W,null,1);
     return W;
   }
-  $('adPreview').onclick=function(){collect();try{localStorage.setItem('rw_cfg',JSON.stringify(W));toast('Preview saved. Page reload ho raha hai…');setTimeout(function(){location.hash='';location.reload()},700)}catch(e){toast('Browser storage band hai')}};
-  $('adReset').onclick=function(){try{localStorage.removeItem('rw_cfg')}catch(e){}toast('Reset. Reload…');setTimeout(function(){location.hash='';location.reload()},600)};
+  $('adPreview').onclick=function(){collect();try{localStorage.setItem('rw_cfg',JSON.stringify(W));toast('Preview saved. Page reload ho raha hai…');setTimeout(function(){history.replaceState(null,'',location.pathname+location.search);location.reload()},700)}catch(e){toast('Browser storage band hai')}};
+  $('adReset').onclick=function(){try{localStorage.removeItem('rw_cfg')}catch(e){}toast('Reset. Reload…');setTimeout(function(){history.replaceState(null,'',location.pathname+location.search);location.reload()},600)};
   $('adCopyJson').onclick=function(){collect();var v=$('f_json').value;if(navigator.clipboard){navigator.clipboard.writeText(v).then(function(){toast('JSON copied')})}else{$('f_json').select();document.execCommand('copy');toast('JSON copied')}};
   $('adDownload').onclick=function(){
     collect();var json=JSON.stringify(W,null,1);
